@@ -6,7 +6,11 @@
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
 
 body {
-    background-color: #F9192F;
+    background-color: black;
+}
+
+a.active {
+    color: red;
 }
 
 #wrapper {
@@ -34,7 +38,7 @@ body {
         position: inherit;
         margin: 0 0 0 250px;
         padding: 0 30px;
-        border-left: 1px solid #000000;
+        border-left: 1px solid white;
     }
 }
 
@@ -107,7 +111,7 @@ body {
 }
 
 .sidebar ul li {
-    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid black;
 }
 
 .sidebar ul li a.active {
@@ -434,4 +438,8 @@ ul#results li h3, ul#results li h4 {
 ul#results li:hover h3, ul#results li:hover h4  {
 	color: #3b3b3b;
 	font-weight: bold;
+}
+
+.tableau_carte {
+    margin-top: 130px;
 }

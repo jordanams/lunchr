@@ -49,6 +49,7 @@ a {
 a:active,
 a:hover {
   outline: 0;
+  color: red;
 }
 abbr[title] {
   border-bottom: 1px dotted;
@@ -915,12 +916,12 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #000000;
+  color: darkgrey;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #2a6496;
+  color: red;
   text-decoration: underline;
 }
 a:focus {
@@ -4194,7 +4195,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #F9192F;
+  background-color: black;
   border-color: #000000;
 }
 .navbar-default .navbar-brand {

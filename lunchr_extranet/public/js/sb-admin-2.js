@@ -28,10 +28,10 @@ $(function() {
 })
 
 
-/***************  Fonction supprimer restaurant  ***************/
+/***************  Fonction supprimer carte / menu  ***************/
 
-function confirm_delete_resto() {
-  return confirm('Etes-vous sûr de vouloir supprimer ce restaurant ?');
+function confirm_delete_carte() {
+  return confirm('Etes-vous sûr de vouloir supprimer cette carte ? Cela effacera aussi tout les menus de cette carte');
 }
 
 /*Fonction supprimer users*/

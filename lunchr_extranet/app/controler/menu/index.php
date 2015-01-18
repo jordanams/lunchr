@@ -1,13 +1,15 @@
 <?php
-include_once('../app/model/accueil/index.php');
+include('../app/model/menu/afficher_carte.php');
+
+$afficher_carte = afficher_carte();
 
 	if(isset($_GET['logout'])) {
 		session_start();
 		session_destroy();
-		setcookie("Login",'',time()-3600);
 		header('location:index.php?module=login&action=index&logout=1');
 		exit;
 	}
 
-include_once('../app/view/accueil/index.php'); 
+
+include('../app/view/menu/index.php'); 
 ?>

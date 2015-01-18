@@ -1,7 +1,7 @@
 <?php
-include('../app/model/restaurants/afficher_resto.php');
+include('../app/model/menu/afficher_menu.php');
 
-$afficher_resto = afficher_resto();
+$afficher_menu = afficher_menu();
 
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -11,5 +11,5 @@ $afficher_resto = afficher_resto();
 	}
 
 
-include('../app/view/restaurants/index.php'); 
+include('../app/view/menu/liste_menu.php'); 
 ?>

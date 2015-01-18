@@ -404,7 +404,7 @@ init();
                             <div class="input-group custom-search-form">
                                 <input type="text" id="search" class="form-control" placeholder="Search...">
                                 <h4 id="results-text">Showing results for: <b id="search-string">Array</b></h4>
-		<ul id="results"></ul>
+		                          <ul id="results"></ul>
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -415,6 +415,9 @@ init();
                         </li>
                         <li>
                             <a <?php if($_GET['module']=='accueil') { echo' class="active"'; } ?> href="index.php?module=accueil&action=index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+                        <li>
+                            <a <?php if($_GET['module']=='menu') { echo' class="active"'; } ?> href="index.php?module=menu&action=index"><i class="fa fa-list"></i> Liste des cartes / menus</a>
                         </li>
                         <li>
                             <a <?php if($_GET['module']=='commandes') { echo' class="active"'; } ?> href="index.php?module=commandes&action=index"><i class="fa fa-list"></i> Liste des commandes</a>
