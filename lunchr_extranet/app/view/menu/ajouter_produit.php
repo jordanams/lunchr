@@ -13,18 +13,42 @@
 				</ul>
 
 			
-        		<form class="form-horizontal" id="formu_carte" name="formu_users" action="" method="POST">
+        		<form class="form-horizontal" id="formu_carte" name="formu_users" action="" method="POST" enctype="multipart/form-data">
 					<fieldset>
 
 						<!-- Form Name -->
 						<legend>Ajouter des produits</legend>
 
 						<div class="form-group">
-						  <label class="col-md-2 column ui-sortable" for="selectbasic">Séléctioner le menu</label>
+						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner un restaurant</label>
+						  <div class="col-md-5">
+						    <select id="nom_resto" name="nom_resto" class="form-control">
+						    <?php foreach ($afficher_resto as $key => $row) {
+						    echo'<option value="'.$row['lr_id'].'">'.$row['lr_nom'].'</option>';
+						    }
+							?>
+						    </select>
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner une carte</label>
+						  <div class="col-md-5">
+						    <select id="nom_carte" name="nom_carte" class="form-control">
+						    <?php foreach ($afficher_carte as $key => $row) {
+						    echo'<option value="'.$row['lce_id'].'">'.$row['lce_nom'].'</option>';
+						    }
+							?>
+						    </select>
+						  </div>
+						</div>
+
+						<div class="form-group">
+						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner un menu</label>
 						  <div class="col-md-5">
 						    <select id="nom_menu" name="nom_menu" class="form-control">
 						    <?php foreach ($afficher_menu as $key => $row) {
-						    echo'<option value="'.$row['lm_id'].'">'.$row['lr_nom'].' - '.$row['lce_nom'].' - '.$row['lm_nom'].'</option>';
+						    echo'<option value="'.$row['lm_id'].'">'.$row['lce_nom'].' - '.$row['lm_nom'].'</option>';
 						    }
 							?>
 						    </select>

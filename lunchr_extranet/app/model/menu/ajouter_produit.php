@@ -1,25 +1,6 @@
 <?php
 
-	function afficher_menu() {
-		global $connexion;
-		try {
-  			$select = $connexion -> prepare("SELECT * 
-  											 FROM lunchr_restaurants as lr, lunchr_users_pro as lu, lunchr_carte as lc, lunchr_menu as lm
-  											 WHERE lr.lr_id = '65' and lu.lup_id = '2' and lc.lce_id = lm.lce_id");
-			$select -> execute();
-			$select -> setFetchMode(PDO::FETCH_ASSOC);
-			$resultat = $select -> fetchAll();
-			return $resultat;
-		}
-		
-		catch (Exception $e) {
-  		print $e->getMessage();
-  		return false;
-		}
-	}
-
-
-	function ajouter_produit($chiffre_menu, $chiffre_resto, $nom_produit, $prix_produit, $desc_produit, $avatar1) {
+	function ajouter_produit($nom_carte, $nom_resto, $nom_produit, $prix_produit, $desc_produit, $avatar1) {
 
 		/****************  Image  ****************/
 
@@ -31,7 +12,7 @@
 		else {
 
 			$url = md5(uniqid(rand(), true));
-			$avatar1="http://localhost:8888/LunchR/lunchr_extranet/public/images/img_produits/".$url.".jpg";
+			$avatar1="localhost:8888/LunchR/lunchr_extranet/public/images/img_produits/".$url.".jpg";
 
 			if (move_uploaded_file($_FILES['ch_file1'] ['tmp_name'],"images/img_produits/".$url.".jpg"))
 
@@ -72,14 +53,16 @@
 														lp_prix,
 														lp_description,
 														lp_image)
-												values ('1', 
-														'65',
+												values (:nom_carte,
+														:nom_resto, 
 														:nom_produit,
 														:prix_produit,
 														:desc_produit,
 														:image1)";
 						
-			$curseur = $connexion->prepare($query); 
+			$curseur = $connexion->prepare($query);
+			$curseur->bindValue(':nom_carte', $nom_carte, PDO::PARAM_STR);
+			$curseur->bindValue(':nom_resto', $nom_resto, PDO::PARAM_STR);
 			$curseur->bindValue(':nom_produit', $nom_produit, PDO::PARAM_STR);
 			$curseur->bindValue(':prix_produit', $prix_produit, PDO::PARAM_STR);
 			$curseur->bindValue(':desc_produit', $desc_produit, PDO::PARAM_STR);

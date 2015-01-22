@@ -1,5 +1,7 @@
 <?php
 include('../app/model/menu/ajouter_produit.php');
+include('../app/model/menu/ajouter_menu.php');
+include('../app/model/menu/afficher_menu.php');
 
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -8,18 +10,20 @@ include('../app/model/menu/ajouter_produit.php');
 		exit;
 	}
 
+$afficher_resto = afficher_resto();
+$afficher_carte = afficher_carte();
 $afficher_menu = afficher_menu();
-// $afficher_resto = afficher_resto();
 
 if(!isset($_FILES['ch_file1']))
 	{
 		$avatar1= "";
 	}
 
-		if(isset($_POST['nom_menu'])) {
+		if(isset($_POST['nom_resto'])) {
 
-			$insert = ajouter_produit(	'1',
-										'65', 
+			$insert = ajouter_produit(	$_POST['nom_carte'],
+										$_POST['nom_resto'],
+										$_POST['nom_menu'], 
 										$_POST['nom_produit'],
 										$_POST['prix_produit'], 
 										$_POST['desc_produit'], 

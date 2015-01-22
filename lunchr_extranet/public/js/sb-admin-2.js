@@ -28,16 +28,18 @@ $(function() {
 })
 
 
-/***************  Fonction supprimer carte / menu  ***************/
+/***************  Fonction supprimer carte / menu / produit  ***************/
+
+/*Fonction supprimer carte*/
 
 function confirm_delete_carte() {
   return confirm('Etes-vous sûr de vouloir supprimer cette carte ? Cela effacera aussi tout les menus de cette carte');
 }
 
-/*Fonction supprimer users*/
+/*Fonction supprimer menu*/
 
-function confirm_delete_users() {
-  return confirm('Etes-vous sûr de vouloir cette utilisateur ?');
+function confirm_delete_menu() {
+  return confirm('Etes-vous sûr de vouloir supprimer ce menu ? Cela effacera aussi tout les produits de ce menu');
 }
 
 

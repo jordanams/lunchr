@@ -43,11 +43,11 @@ if(isset($_COOKIE['Lunchr_Login']))
 <?php
 
 
-// NON ADMIN
+// NON ACTIF
 if(isset($_GET['admin'])) {
   
   if($_GET['admin'] == 'null') {
-       echo '<div class="alert alert-danger" role="alert">Vous n\'êtes pas autorisé à acceder à cette zone !</div>';
+       echo '<div class="alert alert-danger" role="alert">Vous n\'êtes pas autorisé à acceder à cette zone ! <br/> Ou vérfiez d\'avoir activé votre restaurant par e-mail</div>';
   }
 
 }

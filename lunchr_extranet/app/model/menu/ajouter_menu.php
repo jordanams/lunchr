@@ -40,14 +40,16 @@
 
 
 
-	function ajouter_menu ($chiffre_resto, $chiffre_carte, $nom_menu) {
+	function ajouter_menu ($nom_resto, $nom_carte, $nom_menu) {
 
 	global $connexion;
 	try {
 		$query = "insert into lunchr_menu (lr_id, lce_id, lm_nom)
-				values ('65', '1' ,:nom_menu)";
+				values (:nom_resto, :nom_carte ,:nom_menu)";
 					
 		$curseur = $connexion->prepare($query);
+		$curseur->bindValue(':nom_resto', $nom_resto, PDO::PARAM_STR);
+		$curseur->bindValue(':nom_carte', $nom_carte, PDO::PARAM_STR);
 		$curseur->bindValue(':nom_menu', $nom_menu, PDO::PARAM_STR);
 		$retour = $curseur->execute();
 		$curseur->closeCursor();	

@@ -13,7 +13,7 @@ $afficher_resto = afficher_resto();
 
 	if(isset($_POST['nom_menu'])) {
 
-		$insert = ajouter_menu('65', '1', $_POST['nom_menu']);
+		$insert = ajouter_menu($_POST['nom_resto'], $_POST['nom_carte'], $_POST['nom_menu']);
 	
 		if($insert = true) {
 			header('Location:index.php?module=menu&action=liste_menu&insert_menu=1');

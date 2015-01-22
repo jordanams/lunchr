@@ -31,8 +31,8 @@
 	                              echo"<td>".$row['lr_nom']."</td>"; 
 	                              echo"<td>".$row['lce_nom']."</td>";
 	                              echo"<td>".$row['lm_nom']."</td>";
-	                              echo'<td><a href="index.php?module=restaurants&action=details_resto&id='.$row['lm_id'].'">Détails</a></td>';
-	                              echo'<td id="supp1"><a href="index.php?module=restaurants&action=supp_resto&id='.$row['lm_id'].'" onclick="return confirm_delete_carte()">Supprimer</a></td>';
+	                              echo'<td><a href="index.php?module=menu&action=details_menu&id='.$row['lm_id'].'">Détails</a></td>';
+	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_menu&id='.$row['lm_id'].'" onclick="return confirm_delete_menu()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>

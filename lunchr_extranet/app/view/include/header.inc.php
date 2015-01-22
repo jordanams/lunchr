@@ -92,22 +92,38 @@ if(isset($_GET['logout'])) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////         RESTAURANTS        ///////////////////
+//////////////////         CARTE / MENU / PRODUITS        ///////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// INSERTION DE RESTAURANT
-if(isset($_GET['com_success_resto'])) {
+// INSERTION D'UNE CARTE
+if(isset($_GET['insert_carte'])) {
 
-    if($_GET['com_success_resto'] == 1) {
-        echo '<div class="alert alert-success" role="alert">Le restaurant a été ajouté</div>';
+    if($_GET['insert_carte'] == 1) {
+        echo '<div class="alert alert-success" role="alert">La carte a bien été ajouté</div>';
   }
 }
 
-// SUPPRESSION DE RESTAURANT
-if(isset($_GET['supp_resto'])) {
+// SUPPRESSION D'UNE CARTE
+if(isset($_GET['supp_carte'])) {
 
-    if($_GET['supp_resto'] == 1) {
-        echo '<div class="alert alert-success" role="alert">Le restaurant a été supprimé</div>';
+    if($_GET['supp_carte'] == 1) {
+        echo '<div class="alert alert-danger" role="alert">La carte a bien été supprimé</div>';
+  }
+}
+
+// INSERTION D'UN MENU
+if(isset($_GET['insert_menu'])) {
+
+    if($_GET['insert_menu'] == 1) {
+        echo '<div class="alert alert-success" role="alert">Le menu a bien été ajouté</div>';
+  }
+}
+
+// SUPPRESSION D'UN MENU
+if(isset($_GET['supp_menu'])) {
+
+    if($_GET['supp_menu'] == 1) {
+        echo '<div class="alert alert-danger" role="alert">Le menu a bien été supprimé</div>';
   }
 }
 
@@ -183,7 +199,9 @@ if(isset($_SESSION['admin'])) {
   
     if($_SESSION['admin'] == 2) {
 ?>
+<div ALIGN=CENTER>
 <button class="btn btn-info btn-sm" data-toggle="modal" data-target=".bs-example-modal-lg">Debug</button>
+</div>
 
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
@@ -191,32 +209,32 @@ if(isset($_SESSION['admin'])) {
       <?php
 	  echo "<pre>";
 	echo "<<<<<<<<<< Trace \$_SESSION >>>>>>>>>><br />";
-	var_dump($_SESSION);
+	print_r($_SESSION);
 	echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
 	echo "</pre>";
 	
 	
 	echo "<pre>";
 	echo "<<<<<<<<<< Trace \$_COOKIES >>>>>>>>>><br />";
-	var_dump($_COOKIE);
+	print_r($_COOKIE);
 	echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
 	echo "</pre>";
 	
 	echo "<pre>";
 	echo "<<<<<<<<<< Trace \$_POST >>>>>>>>>><br />";
-	var_dump($_POST);
+	print_r($_POST);
 	echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
 	echo "</pre>";
 	
 	echo "<pre>";
 	echo "<<<<<<<<<< Trace \$_GET >>>>>>>>>><br />";
-	var_dump($_GET);
+	print_r($_GET);
 	echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
 	echo "</pre>";
 	
 	echo "<pre>";
 	echo "<<<<<<<<<< Trace \$_SERVER >>>>>>>>>><br />";
-	var_dump($_SERVER);
+	print_r($_SERVER);
 	echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
 	echo "</pre>";
 
@@ -224,7 +242,7 @@ if(isset($_SESSION['admin'])) {
     {
     echo "<pre>";
     echo "<<<<<<<<<< Trace RESTAURANT >>>>>>>>>><br />";
-    var_dump($verif_details);
+    print_r($verif_details);
     echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
     echo "</pre>";
     }
@@ -233,7 +251,7 @@ if(isset($_SESSION['admin'])) {
     {
     echo "<pre>";
     echo "<<<<<<<<<< Trace LISTE_RESTAURANT >>>>>>>>>><br />";
-    var_dump($afficher_resto);
+    print_r($afficher_resto);
     echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
     echo "</pre>";
 	}
@@ -242,7 +260,7 @@ if(isset($_SESSION['admin'])) {
     {
     echo "<pre>";
     echo "<<<<<<<<<< Trace LISTE_RESTAURANT >>>>>>>>>><br />";
-    var_dump($afficher_resto);
+    print_r($afficher_resto);
     echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
     echo "</pre>";
 	}
@@ -251,7 +269,7 @@ if(isset($_SESSION['admin'])) {
     {
     echo "<pre>";
     echo "<<<<<<<<<< Trace LISTE_USERS_PRO >>>>>>>>>><br />";
-    var_dump($afficher_users);
+    print_r($afficher_users);
     echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
     echo "</pre>";
     }
@@ -260,23 +278,16 @@ if(isset($_SESSION['admin'])) {
     {
     echo "<pre>";
     echo "<<<<<<<<<< Trace LISTE_USERS >>>>>>>>>><br />";
-    var_dump($afficher_users);
+    print_r($afficher_users);
     echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
     echo "</pre>";
     }
 
-    echo "<pre>";
-    echo "<<<<<<<<<< Trace POSITION >>>>>>>>>><br />";
-    echo "<div id='infoposition'></div>";
-    echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
-    echo "</pre>";
-
-	  ?>
+	?>
 
     </div>
   </div>
 </div>
-<a href="../app/view/tools/APIGEN_RESULTAT">Apigen (Liste des fonctions)</a>
 <?php
 	}
 }
