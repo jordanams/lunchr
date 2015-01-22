@@ -1,5 +1,5 @@
 <?php
-include_once('../app/model/accueil/index.php');
+include_once('../app/model/gestion_suggestion/gestion_suggestion.php');
 
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -9,5 +9,7 @@ include_once('../app/model/accueil/index.php');
 		exit;
 	}
 
-include_once('../app/view/accueil/index.php'); 
+$gestion_suggestion = gestion_suggestion();
+
+include_once('../app/view/gestion_suggestion/index.php'); 
 ?>

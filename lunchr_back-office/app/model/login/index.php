@@ -11,7 +11,7 @@ function verif_user($login, $password) {
 			$select->execute(array("login"=>$login, "password"=>$password));
 			$select->setFetchMode(PDO::FETCH_ASSOC);
 			$resultat = $select -> fetchAll();
-			var_dump($resultat);
+			//var_dump($resultat);
 			//die();
 			$count = count($resultat);
 

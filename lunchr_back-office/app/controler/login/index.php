@@ -18,14 +18,5 @@ include('../app/model/login/index.php');
 		header('location:index.php?module=accueil&action=index&login_success=1');
 	}
 
-/*
-	if(isset($_GET['deco'])) {
-		session_start();
-		session_destroy();
-		header('location:index.php?module=accueil&action=index&logout=1');
-		exit;
-	}
-*/
-
 include('../app/view/login/index.php'); 
 ?>
