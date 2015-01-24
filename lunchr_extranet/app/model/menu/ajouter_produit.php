@@ -1,6 +1,6 @@
 <?php
 
-	function ajouter_produit($nom_carte, $nom_resto, $nom_produit, $prix_produit, $desc_produit, $avatar1) {
+	function ajouter_produit($id_resto, $id_menu, $nom_produit, $prix_produit, $desc_produit, $avatar1) {
 
 		/****************  Image  ****************/
 
@@ -43,26 +43,29 @@
 			imagedestroy($image1);
 		}
 
-		/**********  REQUETE  **********/
+		/**********  REQUETE  ******* RAJOUTER LCE_ID A LA TABLE !!!!! ***/
 
 		global $connexion;
 		try {
-			$query = "insert into lunchr_produits	(	lm_id, 
-														lr_id,
+			$query = "insert into lunchr_produits	(	lr_id,
+														lce_id,
+														lm_id,
 														lp_nom,
 														lp_prix,
 														lp_description,
 														lp_image)
-												values (:nom_carte,
-														:nom_resto, 
+												values (:id_resto,
+														:id_carte,
+														:id_menu,
 														:nom_produit,
 														:prix_produit,
 														:desc_produit,
 														:image1)";
 						
 			$curseur = $connexion->prepare($query);
-			$curseur->bindValue(':nom_carte', $nom_carte, PDO::PARAM_STR);
-			$curseur->bindValue(':nom_resto', $nom_resto, PDO::PARAM_STR);
+			$curseur->bindValue(':id_resto', $id_resto, PDO::PARAM_STR);
+			$curseur->bindValue(':id_carte', $id_carte, PDO::PARAM_STR);
+			$curseur->bindValue(':id_menu', $id_menu, PDO::PARAM_STR);
 			$curseur->bindValue(':nom_produit', $nom_produit, PDO::PARAM_STR);
 			$curseur->bindValue(':prix_produit', $prix_produit, PDO::PARAM_STR);
 			$curseur->bindValue(':desc_produit', $desc_produit, PDO::PARAM_STR);

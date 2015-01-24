@@ -1,5 +1,5 @@
 <?php
-
+include('../app/model/menu/select_resto.php');
 include('../app/model/menu/ajouter_carte.php');
 
 	if(isset($_GET['logout'])) {
@@ -16,6 +16,8 @@ include('../app/model/menu/ajouter_carte.php');
 			header('Location:index.php?module=menu&action=index&insert_carte=1');
 		}
 	}
+
+$select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
 
 include('../app/view/menu/ajouter_carte.php'); 
 ?>

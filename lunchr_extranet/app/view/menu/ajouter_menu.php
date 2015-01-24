@@ -39,7 +39,7 @@
 						<div class="form-group">
 						  <label class="col-md-3 control-label" for="textinput">Ajouter un menu</label>  
 						  <div class="col-md-5">
-						  	<input required id="nom_menu" name="nom_menu" type="text" placeholder="Ajouter un nom pour le menu" class="form-control input-md">  
+						  	<input required id="id_menu" name="id_menu" type="text" placeholder="Ajouter un nom pour le menu" class="form-control input-md">  
 						  </div>
 						</div>
 						
