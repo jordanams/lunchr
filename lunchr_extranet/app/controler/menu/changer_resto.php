@@ -1,6 +1,5 @@
 <?php
 include('../app/model/menu/select_resto.php');
-include('../app/model/menu/afficher_carte.php');
 
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -9,6 +8,7 @@ include('../app/model/menu/afficher_carte.php');
 		exit;
 	}
 
+$select_resto = select_resto($_SESSION['user_id']);
 
 	if(isset($_POST['nom_resto_select'])) {
 
@@ -19,9 +19,5 @@ include('../app/model/menu/afficher_carte.php');
 		}
 	}
 
-$select_resto = select_resto($_SESSION['user_id']);
-$afficher_carte = afficher_carte($_SESSION['user_id'], $_SESSION['id_resto']);
-$select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
-
-include('../app/view/menu/index.php'); 
+include('../app/view/menu/changer_resto.php'); 
 ?>

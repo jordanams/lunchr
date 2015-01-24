@@ -13,18 +13,13 @@
 		  			<?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='ajouter_produit') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>'; }?>
 				</ul>
 				<br/>
-				<?php if ($_SESSION['id_resto'] ==! ""){
-					echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; }
-				}?>
 				<br/><br/>
 
            </div>
 
-        <?php
 
-		if ($_SESSION['id_resto'] == "") {
-				
-           echo'<div class="col-lg-12">
+
+           <div class="col-lg-12">
 
            	<form class="form-horizontal" id="formu_carte" name="formu_users" action="" method="POST">
 				<fieldset>
@@ -32,12 +27,11 @@
 		           <div class="form-group">
 						<label class="col-md-3 control-label" for="selectbasic">Séléctioner un restaurant et valider</label>
 						<div class="col-md-5">
-							<select id="nom_resto_select" name="nom_resto_select" class="form-control">';
-									foreach ($select_resto as $key => $row) {
+							<select id="nom_resto_select" name="nom_resto_select" class="form-control">
+									<?php foreach ($select_resto as $key => $row) {
 								    echo'<option value="'.$row['lr_id'].'">'.$row['lr_nom'].'</option>';
-								}
-								
-							echo'</select>
+								}?>
+							</select>
 						</div>
 					</div>
 
@@ -51,34 +45,8 @@
 					</fieldset>
 				</form>
 
-			</div>';
-		}
-
-		else {
-           	echo'<div class="tableau_carte">
-	            <table id="tableau" class="table">
-
-	                  <tr>
-	                    <th height="40" width="110">Nom de la carte</th>
-	                    <th height="40" width="110">Ajouter un menu</th>
-	                    <th height="40" width="110">Fiche détail de la carte</th>
-	                    <th height="40" width="110">Supprimer la carte</th>
-	                  </tr>';
-	        
-
-	                  		foreach ($afficher_carte as $key => $row) {
-	                            echo"<tr>";
-	                            echo"<td>".$row['lce_nom']."</td>";
-	                            echo'<td><a class="fa fa-plus-square" href="index.php?module=menu&action=ajouter_menu"> Ajouter</a></td>';
-	                            echo'<td><a href="index.php?module=menu&action=details_carte&id='.$row['lce_id'].'">Détails</a></td>';
-	                            echo'<td id="supp1"><a href="index.php?module=menu&action=supp_carte&id='.$row['lce_id'].'" onclick="return confirm_delete_carte()">Supprimer</a></td>';
-	                            echo"</tr>";
-	                        }
-	                  
-	            echo'</table>';
-      		echo'</div>';
-      	}
-	    ?>
+			</div>
+		
 
 
 <?php include_once('../app/view/include/footer.inc.php'); ?>              

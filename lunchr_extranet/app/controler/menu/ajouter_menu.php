@@ -1,4 +1,5 @@
 <?php
+include('../app/model/menu/select_resto.php');
 include('../app/model/menu/ajouter_menu.php');
 
 	if(isset($_GET['logout'])) {
@@ -19,6 +20,8 @@ $afficher_resto = afficher_resto();
 			header('Location:index.php?module=menu&action=liste_menu&insert_menu=1');
 		}
 	}
+
+$select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
 
 include('../app/view/menu/ajouter_menu.php'); 
 ?>

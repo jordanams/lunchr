@@ -1,7 +1,6 @@
 <?php
+include('../app/model/menu/select_resto.php');
 include('../app/model/menu/afficher_menu.php');
-
-$afficher_menu = afficher_menu();
 
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -10,6 +9,8 @@ $afficher_menu = afficher_menu();
 		exit;
 	}
 
+$afficher_menu = afficher_menu($_SESSION['id_resto']);
+$select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
 
 include('../app/view/menu/liste_menu.php'); 
 ?>

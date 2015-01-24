@@ -304,7 +304,7 @@ if(isset($_SESSION['admin'])) {
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
-                
+                <a><?php echo $_SESSION['login']; ?></a>
                 <li id="testtool" data-toggle="tooltip" title="Nouveaux restaurants" data-placement="top"  class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-bell fa-fw"></i> <span id="count_notif"></span> <i class="fa fa-caret-down"></i>
@@ -382,12 +382,11 @@ init();
                     
                     
                     <ul id="new_resto" class="dropdown-menu dropdown-alerts">
-                       
-
-   
-                     </ul>
+                     
+                    </ul>
                     <!-- /.dropdown-alerts -->
                 </li>
+
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">

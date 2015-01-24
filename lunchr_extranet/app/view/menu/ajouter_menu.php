@@ -4,6 +4,7 @@
 
            		<h1> Administration des menus </h1>
 		        <ul class="nav nav-tabs nav-justified" role="tablist">
+		        	<?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET["action"]=="changer_resto") { echo' class="active"'; } echo'><a href="index.php?module=menu&action=changer_resto">Changer de restaurant</a></li>'; }?>
 			        <li role="presentation"<?php if($_GET['action']=='index') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=index">Listes des cartes</a></li>
 			        <li role="presentation"<?php if($_GET['action']=='liste_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=liste_menu">Listes des menus</a></li>
 			        <li role="presentation"<?php if($_GET['action']=='liste_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=liste_produit">Liste des produits</a></li>
@@ -11,6 +12,9 @@
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>
 				</ul>
+				<br/>
+				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; } ?>
+				<br/><br/>
 
 			
         		<form class="form-horizontal" id="formu_carte" name="formu_users" action="" method="POST">
@@ -18,18 +22,6 @@
 
 						<!-- Form Name -->
 						<legend>Ajouter un menu</legend>
-
-						<div class="form-group">
-						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner un restaurant</label>
-						  <div class="col-md-5">
-						    <select id="nom_resto" name="nom_resto" class="form-control">
-						    <?php foreach ($afficher_resto as $key => $row) {
-						    echo'<option value="'.$row['lr_id'].'">'.$row['lr_nom'].'</option>';
-						    }
-							?>
-						    </select>
-						  </div>
-						</div>
 
 						<div class="form-group">
 						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner une carte</label>
