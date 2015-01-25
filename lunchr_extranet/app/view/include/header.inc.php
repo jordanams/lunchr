@@ -127,13 +127,22 @@ if(isset($_GET['supp_menu'])) {
   }
 }
 
-// MODIFICATION DE RESTAURANT
-if(isset($_GET['com_success_update_resto'])) {
+// INSERTION D'UN PRODUIT
+if(isset($_GET['insert_produit'])) {
 
-    if($_GET['com_success_update_resto'] == 1) {
-        echo '<div class="alert alert-success" role="alert">Le restaurant a été modifié</div>';
+    if($_GET['insert_produit'] == 1) {
+        echo '<div class="alert alert-success" role="alert">Le produit a bien été ajouté</div>';
   }
 }
+
+// SUPPRESSION D'UN PRODUIT
+if(isset($_GET['supp_produit'])) {
+
+    if($_GET['supp_produit'] == 1) {
+        echo '<div class="alert alert-danger" role="alert">Le produit a bien été supprimé</div>';
+  }
+}
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -11,6 +11,7 @@
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_carte') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_carte">Ajouter une carte</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>
+		  			<li role="presentation"<?php if($_GET['action']=='mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=mise_en_forme">Mise en forme</a></li>
 				</ul>
 				<br/>
 				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; } ?>
@@ -80,128 +81,50 @@
 						        }
 						    });
 						});
-					</script><br/>
+					</script>
 					
 
 
-						<div class="col-md-12 column ui-sortable">
-							<br/><br/>
-							<label>Produit 1</label>
+						<div>
+
 							<div class="form-group">
+								<label class="col-md-5 control-label" for="selectbasic">Produit</label>
+							</div>
+							
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="selectbasic">Nom du/des produit(s)</label>
 								<div class="col-md-5">
-									<label>Nom du/des produit(s)</label>
 									<input id="nom_produit" name="nom_produit" type="text" placeholder="Nom du/des produit(s)" class="form-control input-md">
 								</div>
 							</div>
 
 							<div class="form-group">
+								<label class="col-md-3 control-label" for="selectbasic">Prix du/des produit(s)</label>
 								<div class="col-md-5">
-									<label>Prix du/des produit(s)</label>
 									<textarea id="prix_produit" name="prix_produit" class="form-control" placeholder="Prix du/des produit(s)"></textarea>
 								</div>
 							</div>
 
 							<div class="form-group">
+								<label class="col-md-3 control-label" for="selectbasic">Description du/des produit(s)</label>
 								<div class="col-md-5">
-									<label>Description du/des produit(s)</label>
 									<textarea id="desc_produit" name="desc_produit" class="form-control" placeholder="Description du/des produit(s)"></textarea>
 								</div>
 							</div>
 
 							<div class="form-group">
+								<label class="col-md-3 control-label" for="selectbasic">Ajouter une image</label>
 								<div class="col-md-5">
-									<label>Ajouter une image</label>
 									<input id="ch_file1" name="ch_file1" class="input-file" type="file">
 								</div>
 							</div>
+
 						</div>
-
-
-						
-						<!-- <div class="col-md-12 column ui-sortable">
-							<br/><br/>
-							<label>Produit 2</label>
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Nom du/des produit(s)</label>
-									<input id="nom_produit" name="nom_produit" type="text" placeholder="Nom du/des produit(s)" class="form-control input-md">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Description du/des produit(s)</label>
-									<textarea class="form-control" id="desc_text" name="desc_text" placeholder="Description du/des produit(s)"></textarea>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Ajouter une image</label>
-									<input id="ad_image" name="ad_image" class="input-file" type="file">
-								</div>
-							</div>
-						</div>
-
-
-						
-						<div class="col-md-12 column ui-sortable">
-							<br/><br/>
-							<label>Produit 3</label>
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Nom du/des produit(s)</label>
-									<input id="nom_produit" name="nom_produit" type="text" placeholder="Nom du/des produit(s)" class="form-control input-md">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Description du/des produit(s)</label>
-									<textarea class="form-control" id="desc_text" name="desc_text" placeholder="Description du/des produit(s)"></textarea>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Ajouter une image</label>
-									<input id="ad_image" name="ad_image" class="input-file" type="file">
-								</div>
-							</div>
-						</div>
-
-
-
-						<div class="col-md-12 column ui-sortable">
-							<br/><br/>
-							<label>Produit 4</label>
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Nom du/des produit(s)</label>
-									<input id="nom_produit" name="nom_produit" type="text" placeholder="Nom du/des produit(s)" class="form-control input-md">
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Description du/des produit(s)</label>
-									<textarea class="form-control" id="desc_text" name="desc_text" placeholder="Description du/des produit(s)"></textarea>
-								</div>
-							</div>
-
-							<div class="form-group">
-								<div class="col-md-5">
-									<label>Ajouter une image</label>
-									<input id="ad_image" name="ad_image" class="input-file" type="file">
-								</div>
-							</div>
-						</div> -->
-
 
 						<!-- Button -->
 						<div class="form-group">
-						  <label class="col-md-1 control-label" for="singlebutton">Valider</label>
-						  <div class="col-md-4">
+						  <label class="col-md-3 control-label" for="singlebutton">Valider</label>
+						  <div class="col-md-5">
 						    <button id="singlebutton" name="singlebutton" class="btn btn-primary col-md-12" type="submit">Valider</button>
 						  </div>
 						</div>

@@ -11,6 +11,7 @@
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_carte') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_carte">Ajouter une carte</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>
+		  			<li role="presentation"<?php if($_GET['action']=='mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=mise_en_forme">Mise en forme</a></li>
 				</ul>
 				<br/>
 				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; } ?>
@@ -35,8 +36,8 @@
 	                              echo"<td>".$row['lce_nom']."</td>";
 	                              echo"<td>".$row['lm_nom']."</td>";
 	                              echo"<td>".$row['lp_nom']."</td>";
-	                              echo'<td><a href="index.php?module=restaurants&action=details_resto&id='.$row['lm_id'].'">Détails</a></td>';
-	                              echo'<td id="supp1"><a href="index.php?module=restaurants&action=supp_resto&id='.$row['lm_id'].'" onclick="return confirm_delete_carte()">Supprimer</a></td>';
+	                              echo'<td><a href="index.php?module=menu&action=details_produit&id='.$row['lp_id'].'">Détails</a></td>';
+	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_produit&id='.$row['lp_id'].'" onclick="return confirm_delete_produit()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>

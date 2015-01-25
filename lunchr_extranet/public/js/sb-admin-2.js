@@ -42,6 +42,12 @@ function confirm_delete_menu() {
   return confirm('Etes-vous sûr de vouloir supprimer ce menu ? Cela effacera aussi tout les produits de ce menu');
 }
 
+/*Fonction supprimer produit*/
+
+function confirm_delete_produit() {
+  return confirm('Etes-vous sûr de vouloir supprimer ce produit ?');
+}
+
 
 /***************  Fonction agrandir images  ***************/
 
