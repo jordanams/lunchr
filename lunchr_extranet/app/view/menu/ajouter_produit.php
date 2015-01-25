@@ -27,10 +27,7 @@
 						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner une carte</label>
 						  <div class="col-md-5">
 						    <select id="id_carte" name="id_carte" class="form-control">
-						    <?php foreach ($afficher_carte as $key => $row) {
-						    echo'<option value="'.$row['lce_id'].'">'.$row['lce_nom'].'</option>';
-						    }
-							?>
+						    	<option value="">-- Carte --</option>
 						    </select>
 						  </div>
 						</div>
@@ -39,14 +36,53 @@
 						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner un menu</label>
 						  <div class="col-md-5">
 						    <select id="id_menu" name="id_menu" class="form-control">
-						    <?php foreach ($afficher_menu as $key => $row) {
-						    echo'<option value="'.$row['lm_id'].'">'.$row['lce_nom'].' - '.$row['lm_nom'].'</option>';
-						    }
-							?>
+						    	<option value="">-- Menu --</option>
 						    </select>
 						  </div>
 						</div><br/>
+
+
+					<script type="text/javascript">
+						$(document).ready(function() {
+						    var id_carte = $('#id_carte');
+						    var id_menu = $('#id_menu');
+						     
+						    // chargement des carte
+						    $.ajax({
+						        url: '../app/model/menu/select_menu_carte.php?go',
+						        data: 'go', // on envoie $_GET['go']
+						        dataType: 'json', // on veut un retour JSON
+						        success: function(json) {
+						            $.each(json, function(index, value) { // pour chaque noeud JSON
+						                // on ajoute l option dans la liste
+						                id_carte.append('<option value="'+ index +'">'+ value +'</option>');
+						            });
+						        }
+						    });
+						 
+						    // à la sélection d une région dans la liste
+						    id_carte.on('change', function() {
+						        var val = $(this).val(); // on récupère la valeur de la carte
+						 
+						        if(val != '') {
+						            id_menu.empty(); // on vide la liste des menu
+						             
+						            $.ajax({
+						                url: '../app/model/menu/select_menu_carte.php',
+						                data: 'id_carte='+ val, // on envoie $_GET['id_carte']
+						                dataType: 'json',
+						                success: function(json) {
+						                    $.each(json, function(index, value) {
+						                        id_menu.append('<option value="'+ index +'">'+ value +'</option>');
+						                    });
+						                }
+						            });
+						        }
+						    });
+						});
+					</script><br/>
 					
+
 
 						<div class="col-md-12 column ui-sortable">
 							<br/><br/>

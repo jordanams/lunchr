@@ -48,14 +48,12 @@
 		global $connexion;
 		try {
 			$query = "insert into lunchr_produits	(	lr_id,
-														lce_id,
 														lm_id,
 														lp_nom,
 														lp_prix,
 														lp_description,
 														lp_image)
 												values (:id_resto,
-														:id_carte,
 														:id_menu,
 														:nom_produit,
 														:prix_produit,
@@ -64,7 +62,6 @@
 						
 			$curseur = $connexion->prepare($query);
 			$curseur->bindValue(':id_resto', $id_resto, PDO::PARAM_STR);
-			$curseur->bindValue(':id_carte', $id_carte, PDO::PARAM_STR);
 			$curseur->bindValue(':id_menu', $id_menu, PDO::PARAM_STR);
 			$curseur->bindValue(':nom_produit', $nom_produit, PDO::PARAM_STR);
 			$curseur->bindValue(':prix_produit', $prix_produit, PDO::PARAM_STR);

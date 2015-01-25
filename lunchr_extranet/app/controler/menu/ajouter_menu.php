@@ -10,7 +10,7 @@ include('../app/model/menu/ajouter_menu.php');
 		exit;
 	}
 
-	if(isset($_POST['nom_carte'])) {
+	if(isset($_POST['id_carte'])) {
 
 		$insert = ajouter_menu($_SESSION['id_resto'], $_POST['id_carte'], $_POST['nom_menu']);
 	
@@ -19,8 +19,8 @@ include('../app/model/menu/ajouter_menu.php');
 		}
 	}
 
-$afficher_carte = afficher_carte($_SESSION['user_id'], $_SESSION['id_resto']);
 $select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
+$afficher_carte = afficher_carte($_SESSION['user_id'], $_SESSION['id_resto']);
 
 include('../app/view/menu/ajouter_menu.php'); 
 ?>

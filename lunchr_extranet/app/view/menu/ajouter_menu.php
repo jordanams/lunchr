@@ -26,7 +26,7 @@
 						<div class="form-group">
 						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner une carte</label>
 						  <div class="col-md-5">
-						    <select id="nom_carte" name="nom_carte" class="form-control">
+						    <select id="id_carte" name="id_carte" class="form-control">
 						    <?php foreach ($afficher_carte as $key => $row) {
 						    echo'<option value="'.$row['lce_id'].'">'.$row['lce_nom'].'</option>';
 						    }
@@ -39,7 +39,7 @@
 						<div class="form-group">
 						  <label class="col-md-3 control-label" for="textinput">Ajouter un menu</label>  
 						  <div class="col-md-5">
-						  	<input required id="id_menu" name="id_menu" type="text" placeholder="Ajouter un nom pour le menu" class="form-control input-md">  
+						  	<input required id="nom_menu" name="nom_menu" type="text" placeholder="Ajouter un nom pour le menu" class="form-control input-md">  
 						  </div>
 						</div>
 						
