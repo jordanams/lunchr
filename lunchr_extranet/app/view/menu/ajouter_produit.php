@@ -11,7 +11,7 @@
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_carte') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_carte">Ajouter une carte</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>
-		  			<li role="presentation"<?php if($_GET['action']=='mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=mise_en_forme">Mise en forme</a></li>
+		  			<li role="presentation"<?php if($_GET['action']=='select_mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=select_mise_en_forme">Mise en forme</a></li>
 				</ul>
 				<br/>
 				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; } ?>
@@ -61,7 +61,7 @@
 						        }
 						    });
 						 
-						    // à la sélection d une région dans la liste
+						    // à la sélection d une carte dans la liste
 						    id_carte.on('change', function() {
 						        var val = $(this).val(); // on récupère la valeur de la carte
 						 
@@ -71,6 +71,7 @@
 						            $.ajax({
 						                url: '../app/model/menu/select_menu_carte.php',
 						                data: 'id_carte='+ val, // on envoie $_GET['id_carte']
+						                data: 'id_resto='+ 65,
 						                dataType: 'json',
 						                success: function(json) {
 						                    $.each(json, function(index, value) {

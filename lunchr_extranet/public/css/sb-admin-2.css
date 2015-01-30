@@ -423,9 +423,21 @@ ul#results li:hover h3, ul#results li:hover h4  {
 }
 
 .tableau_carte {
-    margin-top: 130px;
+    margin-top: 20px;
 }
 
 img#img_position {
     width: 100%;
+}
+
+.details_cmp {
+    margin-left: 15px;
+}
+
+.titre_cmp {
+    font-size: 23px;
+}
+
+.mise_ef {
+    margin-top: 15px;
 }

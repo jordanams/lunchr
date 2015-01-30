@@ -26,11 +26,11 @@
 				<fieldset>
 
 		           <div class="form-group">
-						<label class="col-md-3 control-label" for="selectbasic">Séléctioner un restaurant et valider</label>
+						<label class="col-md-3 control-label" for="selectbasic">Séléctioner une carte</label>
 						<div class="col-md-5">
-							<select id="nom_resto_select" name="nom_resto_select" class="form-control">
-									<?php foreach ($select_resto as $key => $row) {
-								    echo'<option value="'.$row['lr_id'].'">'.$row['lr_nom'].'</option>';
+							<select id="id_carte" name="id_carte" class="form-control">
+									<?php foreach ($afficher_carte as $key => $row) {
+								    echo'<option value="'.$row['lce_id'].'">'.$row['lce_nom'].'</option>';
 								}?>
 							</select>
 						</div>

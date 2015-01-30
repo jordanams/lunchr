@@ -11,7 +11,7 @@
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_carte') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_carte">Ajouter une carte</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>
 		  			<li role="presentation"<?php if($_GET['action']=='ajouter_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>
-		  			<li role="presentation"<?php if($_GET['action']=='mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=mise_en_forme">Mise en forme</a></li>
+		  			<li role="presentation"<?php if($_GET['action']=='select_mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=select_mise_en_forme">Mise en forme</a></li>
 				</ul>
 				<br/>
 				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; } ?>
@@ -21,7 +21,7 @@
 
 
            <div class="tableau_carte">
-	            <table id="tableau" class="table">
+	            <table id="tableau" class="table table-bordered table-hover">
 
 	                  <tr>
 	                  	<th height="40" width="110">Nom de la carte</th>

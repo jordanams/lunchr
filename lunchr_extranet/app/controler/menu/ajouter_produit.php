@@ -38,13 +38,20 @@ $select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['
 if(isset($_GET['go']) || isset($_GET['id_carte'])) {
  
     $json = array();
-     
+    
+    $select_resto_menu = select_resto_menu($chiffre);
+
     if(isset($_GET['go'])) {
-        // requête qui récupère les carte
-        $requete = "SELECT lce_id, lce_nom FROM lunchr_carte ORDER BY lce_nom";
-    } else if(isset($_GET['id_carte'])) {
+        function select_resto_menu($chiffre) {
+        // requête qui récupère les cartes
+        $requete = "SELECT lc.lce_id, lc.lce_nom, lr.lr_id FROM lunchr_carte as lc, lunchr_restaurants as lr 
+                    WHERE lr.lr_id = lc.lr_id and lr.lr_id = '65' ORDER BY lce_nom";
+        }
+    } 
+
+    else if(isset($_GET['id_carte'])) {
         $id = htmlentities(intval($_GET['id_carte']));
-        // requête qui récupère les menu selon la région
+        // requête qui récupère les menus selon la région
         $requete = "SELECT lm_id, lm_nom FROM lunchr_menu WHERE lce_id = ". $id ." ORDER BY lm_nom";
     }
      
@@ -55,6 +62,7 @@ if(isset($_GET['go']) || isset($_GET['id_carte'])) {
         exit('Impossible de se connecter à la base de données.');
     }
     // exécution de la requête
+    $resultat -> execute(array('65'=>$chiffre));
     $resultat = $bdd->query($requete) or die(print_r($bdd->errorInfo()));
      
     if(isset($_GET['go']))

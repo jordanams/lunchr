@@ -1,13 +1,13 @@
 <?php
-function supp_carte($id) {
+function supp_carte($id_carte) {
 
 	global $connexion;
 	try {
 		$query = "DELETE FROM lunchr_carte 
-						 WHERE lce_id = :id";
+						 WHERE lce_id = :id_carte";
 			
 		$curseur = $connexion->prepare($query); 
-		$curseur->bindValue(':id', $id, PDO::PARAM_INT);
+		$curseur->bindValue(':id_carte', $id_carte, PDO::PARAM_INT);
 		$retour = $curseur->execute();
 		$curseur->closeCursor();
 		return true;

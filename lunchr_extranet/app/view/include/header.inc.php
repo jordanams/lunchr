@@ -143,63 +143,17 @@ if(isset($_GET['supp_produit'])) {
   }
 }
 
+// STOP MENU
+if(isset($_GET['stop_menu'])) {
+
+    if($_GET['stop_menu'] == 1) {
+        echo '<div class="alert alert-danger" role="alert">Vous ne pouvez pas ajouter plus de huit menus par carte</div>';
+  }
+}
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////         UTILISATEURS        ///////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// INSERTION D'UTILISATEUR PRO
-if(isset($_GET['insert_users_pro'])) {
-
-    if($_GET['insert_users_pro'] == 1) {
-        echo '<div class="alert alert-success" role="alert">L\'utilisateur pro a été ajouté</div>';
-  }
-}
-
-// INSERTION D'UTILISATEUR
-if(isset($_GET['insert_users'])) {
-
-    if($_GET['insert_users'] == 1) {
-        echo '<div class="alert alert-success" role="alert">L\'utilisateur a été ajouté</div>';
-  }
-}
-
-// SUPPRESSION D'UTILISATEUR PRO
-if(isset($_GET['supp_users_pro'])) {
-
-    if($_GET['supp_users_pro'] == 1) {
-        echo '<div class="alert alert-success" role="alert">L\'utilisateur pro a été supprimé</div>';
-  }
-}
-
-// SUPPRESSION D'UTILISATEUR
-if(isset($_GET['supp_users'])) {
-
-    if($_GET['supp_users'] == 1) {
-        echo '<div class="alert alert-success" role="alert">L\'utilisateur a été supprimé</div>';
-  }
-}
-
-// MODIFICATION D'UTILISATEUR PRO
-if(isset($_GET['update_users_pro'])) {
-
-    if($_GET['update_users_pro'] == 1) {
-        echo '<div class="alert alert-success" role="alert">L\'utilisateur pro a été modifié</div>';
-  }
-}
-
-// MODIFICATION D'UTILISATEUR
-if(isset($_GET['update_users'])) {
-
-    if($_GET['update_users'] == 1) {
-        echo '<div class="alert alert-success" role="alert">L\'utilisateur a été modifié</div>';
-  }
-}
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ?>
 <!-- BARRE DE DEBUG -->

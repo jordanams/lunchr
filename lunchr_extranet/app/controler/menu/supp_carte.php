@@ -1,12 +1,12 @@
 <?php
 
-	if(isset($_GET['id'])) {
+	if(isset($_GET['id_carte'])) {
 		
 		include('../app/model/menu/supp_carte.php');
-		$delete = supp_carte($_GET['id']);
+		$delete = supp_carte($_GET['id_carte']);
 
 		if($delete = true) {
-			supp_carte($_GET['id']);
+			supp_carte($_GET['id_carte']);
 			header('location:index.php?module=menu&action=index&supp_carte=1');
 		}
 	}
