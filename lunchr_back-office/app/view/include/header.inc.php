@@ -59,6 +59,7 @@
 <script type="text/javascript">
  $(document).ready(function() {
     $(testtool).tooltip();
+
   });
 
 </script>
@@ -270,6 +271,11 @@ if(isset($_SESSION['admin'])) {
     echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
     echo "</pre>";
 
+    echo "<pre>";
+    echo "<<<<<<<<<< Trace Suggestions >>>>>>>>>><br />";
+     var_dump($gestion_suggestion);
+    echo "<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>";
+    echo "</pre>";
 	  ?>
 
     </div>
@@ -543,7 +549,11 @@ init();
                             <div class="input-group custom-search-form">
                                 <input type="text" id="search" class="form-control" placeholder="Search...">
                                 <h4 id="results-text">Showing results for: <b id="search-string">Array</b></h4>
+<<<<<<< HEAD
 		<ul id="results"></ul>
+=======
+		                          <ul id="results"></ul>
+>>>>>>> FETCH_HEAD
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -558,20 +568,17 @@ init();
                         <li>
                             <a <?php if($_GET['module']=='restaurants') { echo' class="active"'; } ?> href="index.php?module=restaurants&action=index"><i class="fa fa-cutlery"></i> Restaurants</a>
                         </li>
-                        
-                         <li>
+                        <li>
                             <a <?php if($_GET['module']=='utilisateurs') { echo' class="active"'; } ?>  href="index.php?module=utilisateurs&action=index"><i class="fa fa-users"></i> Utilisateurs</a>
                         </li>
-                        
-                         <li>
-                            <a <?php if($_GET['module']=='commandes') { echo' class="active"'; } ?>  href="index.php?module=commandes&action=index"><i class="fa fa-shopping-cart"></i> Commandes</a>                        </li>
-                        
-                         <li>
+                        <li>
+                            <a <?php if($_GET['module']=='commandes') { echo' class="active"'; } ?>  href="index.php?module=commandes&action=index"><i class="fa fa-shopping-cart"></i> Commandes</a>                        
+                        </li>
+                        <li>
                             <a <?php if($_GET['module']=='geolocalisation') { echo' class="active"'; }?> href="index.php?module=geolocalisation&action=index"><i class="fa fa-crosshairs"></i> Geolocalisation</a>
                         </li>
-                        
-                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <li>
+                            <a <?php if($_GET['module']=='gestion_suggestion') { echo' class="active"'; }?> href="index.php?module=gestion_suggestion&action=index"><i class="fa fa-cog"></i> Gestion des suggestions</a>
                         </li>
                        
                     </ul>
@@ -637,6 +644,7 @@ if(navigator.geolocation)
 
 
 
+<<<<<<< HEAD
 	function search() {
 		var query_value = $('input#search').val();
 		$('b#search-string').html(query_value);
@@ -675,6 +683,8 @@ if(navigator.geolocation)
 
 
 
+=======
+>>>>>>> FETCH_HEAD
 
 </script>
 
