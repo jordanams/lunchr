@@ -441,3 +441,17 @@ img#img_position {
 .mise_ef {
     margin-top: 15px;
 }
+
+tr a {
+    color: rgb(55, 53, 53);
+    text-decoration: underline;    
+}
+
+.actif_success {
+    background-color: #dff0d8;
+}
+
+.actif_warning {
+    background-color: #f14f51;
+    color: black;
+}

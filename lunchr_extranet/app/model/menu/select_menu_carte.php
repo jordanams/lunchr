@@ -1,12 +1,14 @@
 <?php
-
+session_name('lunchr');
+session_start();
 if(isset($_GET['go']) || isset($_GET['id_carte'])) {
  
     $json = array();
      
     if(isset($_GET['go'])) {
         // requête qui récupère les carte
-        $requete = "SELECT lce_id, lce_nom FROM lunchr_carte ORDER BY lce_nom";
+        $requete = "SELECT lc.lce_id, lc.lce_nom, lr.lr_id FROM lunchr_carte as lc, lunchr_restaurants as lr 
+                    WHERE lr.lr_id = lc.lr_id and lr.lr_id =".$_SESSION['id_resto']." ORDER BY lce_nom";
     } else if(isset($_GET['id_carte'])) {
         $id = htmlentities(intval($_GET['id_carte']));
         // requête qui récupère les menu selon la région

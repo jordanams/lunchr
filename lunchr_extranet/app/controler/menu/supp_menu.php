@@ -1,12 +1,12 @@
 <?php
 
-	if(isset($_GET['id'])) {
+	if(isset($_GET['id_menu'])) {
 		
 		include('../app/model/menu/supp_menu.php');
-		$delete = supp_menu($_GET['id']);
+		$delete = supp_menu($_GET['id_menu']);
 
 		if($delete = true) {
-			supp_menu($_GET['id']);
+			supp_menu($_GET['id_menu']);
 			header('location:index.php?module=menu&action=liste_menu&supp_menu=1');
 		}
 	}

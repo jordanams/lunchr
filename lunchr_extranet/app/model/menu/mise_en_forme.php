@@ -6,7 +6,7 @@
   											 FROM lunchr_menu as lm, lunchr_carte as lc, lunchr_restaurants as lr
   											 WHERE lr.lr_id = lc.lr_id and lc.lce_id = lm.lce_id and lc.lr_id = lm.lr_id and lm.lr_id = :id_resto and lm.lce_id = :id_carte
   											 ORDER BY lm.lm_ordre");
-			$select -> execute();
+
 			$select -> execute(array('id_resto'=>$id_resto, 'id_carte'=>$id_carte));
 			$select -> setFetchMode(PDO::FETCH_ASSOC);
 			$resultat = $select -> fetchAll();

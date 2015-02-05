@@ -1,5 +1,6 @@
 <?php
 include('../app/model/menu/details_carte.php');
+include('../app/model/menu/select_carte_actif.php');
  
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -9,8 +10,12 @@ include('../app/model/menu/details_carte.php');
 	}
 
 	if(isset($_GET['id_carte'])) {
-		$verif_details = verif_details($_GET['id_carte']);
+		$verif_carte_menu = verif_carte_menu($_GET['id_carte']);
+		$verif_produit = verif_produit($_GET['id_carte']);
+		$insert = $_SESSION['id_carte'] = $_GET['id_carte'];
 	}
+
+$select_carte_actif = select_carte_actif($_SESSION['id_resto'], $_SESSION['id_carte']);
 
 include('../app/view/menu/details_carte.php'); 
 ?>

@@ -2,17 +2,9 @@
 
            <div class="col-lg-12">
 
-           		<h1> Administration des cartes / menus </h1>
-		        <ul class="nav nav-tabs nav-justified" role="tablist">
-		        	<?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET["action"]=="changer_resto") { echo' class="active"'; } echo'><a href="index.php?module=menu&action=changer_resto">Changer de restaurant</a></li>'; }?>
-			        <li role="presentation"<?php if($_GET['action']=='index') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=index">Listes des cartes</a></li>
-			        <li role="presentation"<?php if($_GET['action']=='liste_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=liste_menu">Listes des menus</a></li>
-			        <li role="presentation"<?php if($_GET['action']=='liste_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=liste_produit">Liste des produits</a></li>
-		  			<li role="presentation"<?php if($_GET['action']=='ajouter_carte') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_carte">Ajouter une carte</a></li>
-		  			<li role="presentation"<?php if($_GET['action']=='ajouter_menu') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>
-		  			<li role="presentation"<?php if($_GET['action']=='ajouter_produit') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>
-		  			<li role="presentation"<?php if($_GET['action']=='select_mise_en_forme') { echo' class="active"'; } ?>><a href="index.php?module=menu&action=select_mise_en_forme">Mise en forme</a></li>
-				</ul>
+           		<h1> Administration des cartes / menus / produits</h1>
+           		<br/>
+		        <?php include_once('../app/view/include/header_carte_menu.inc.php'); ?>
 				<br/>
 				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span>'; } ?>
 				<br/><br/>
@@ -36,8 +28,8 @@
 	                              echo"<td>".$row['lce_nom']."</td>";
 	                              echo"<td>".$row['lm_nom']."</td>";
 	                              echo"<td>".$row['lp_nom']."</td>";
-	                              echo'<td><a href="index.php?module=menu&action=details_produit&id='.$row['lp_id'].'">Détails</a></td>';
-	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_produit&id='.$row['lp_id'].'" onclick="return confirm_delete_produit()">Supprimer</a></td>';
+	                              echo'<td><a href="index.php?module=menu&action=details_produit&id_produit='.$row['lp_id'].'">Détails</a></td>';
+	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_produit&id_produit='.$row['lp_id'].'" onclick="return confirm_delete_produit()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>

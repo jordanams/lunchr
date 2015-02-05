@@ -15,7 +15,7 @@ if(isset($_COOKIE['Lunchr_Login']))
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Lunchr - Back office</title>
+    <title>Lunchr - Extranet</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

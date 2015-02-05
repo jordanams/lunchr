@@ -13,9 +13,10 @@ include('../app/model/menu/ajouter_menu.php');
 	if(isset($_POST['id_carte'])) {
 
 		$count_menu = count_menu($_POST['id_carte']);
-		print_r($count_menu);
+		//echo $count_menu[0]['COUNT(lm_id)'];
+		//die();
 		
-		if($count_menu = 8) {
+		if($count_menu[0]['COUNT(lm_id)'] == 8) {
 			header('Location:index.php?module=menu&action=ajouter_menu&stop_menu=1');
 		}
 
