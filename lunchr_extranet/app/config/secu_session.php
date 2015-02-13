@@ -6,7 +6,7 @@
 	//*****************************************************************************
 	function my_session_start()
 	{
-		session_name('lunchr');
+		session_name('lunchr_extranet');
 		session_start();
 		
 		//On récupère l'adresse IP du clientn en prévoyant le cas du proxy

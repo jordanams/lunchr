@@ -1,5 +1,5 @@
 <?php
-//include('../app/model/commandes/index.php');
+//include('../app/model/compte/index.php');
 
 	if(isset($_GET['logout'])) {
 		session_start();
@@ -7,6 +7,6 @@
 		header('location:index.php?module=login&action=index&logout=1');
 		exit;
 	}
-	
-include('../app/view/commandes/index.php'); 
+
+include('../app/view/compte/index.php'); 
 ?>

@@ -24,11 +24,11 @@
 	                  </tr>
 
 	                  <?php foreach ($afficher_produit as $key => $row) {
-	                              echo"<tr>";
+	                              echo'<tr class="'; if($row['lp_actif'] == 0) {echo"actif_warning";} else {echo"actif_success";} echo'">';
 	                              echo"<td>".$row['lce_nom']."</td>";
 	                              echo"<td>".$row['lm_nom']."</td>";
 	                              echo"<td>".$row['lp_nom']."</td>";
-	                              echo'<td><a href="index.php?module=menu&action=details_produit&id_produit='.$row['lp_id'].'">Détails</a></td>';
+	                              echo'<td><a href="index.php?module=menu&action=details_carte&id_produit='.$row['lp_id'].'&id_carte='.$row['lce_id'].'">Détails</a></td>';
 	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_produit&id_produit='.$row['lp_id'].'" onclick="return confirm_delete_produit()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }

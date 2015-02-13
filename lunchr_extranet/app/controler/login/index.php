@@ -12,10 +12,10 @@ include('../app/model/login/index.php');
 		}
 	}
 	
-	if(isset($_SESSION['login']))
-	{
-		header('location:index.php?module=accueil&action=index&login_success=1');
-	}
+	// if(isset($_SESSION['login']))
+	// {
+	// 	header('location:index.php?module=accueil&action=index&login_success=1');
+	// }
 
 include('../app/view/login/index.php'); 
 ?>

@@ -268,9 +268,11 @@ if(isset($_SESSION['admin'])) {
 
             <ul class="nav navbar-top-links navbar-right">
                 <a><?php echo $_SESSION['login']; ?></a>
-                <li id="testtool" data-toggle="tooltip" title="Nouveaux restaurants" data-placement="top"  class="dropdown">
+                <?php   if(isset($_SESSION['resto_actif_valid'])) {
+                    echo '<li id="testtool" data-toggle="tooltip" title="Nouveaux restaurants" data-placement="top"  class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <span id="count_notif"></span> <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-bell fa-fw"></i> <span id="count_notif"></span> <i class="fa fa-caret-down"></i>';
+                    }?>
                         
                     </a>
                     
@@ -280,9 +282,9 @@ if(isset($_SESSION['admin'])) {
                 <script type="text/javascript">
                 var i = 0;
                 function init(){
-   loop();
-}
-function loop(){
+                    loop();
+                }
+                function loop(){
 					function traiterFlux(flux) {
 							contenu = "";
 							$.each(flux, function(key,value) {
@@ -324,9 +326,9 @@ function loop(){
 						
 						});
 						});
-}
-setInterval('loop();',1000);
-init();
+                }
+                setInterval('loop();',1000);
+                init();
 
 				$(testtool).click(function() {
 								$.ajax({
@@ -375,35 +377,66 @@ init();
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
-                                <input type="text" id="search" class="form-control" placeholder="Search...">
+                                <?php if(isset($_SESSION['resto_actif_valid'])) { echo '<input type="text" id="search" class="form-control" placeholder="Search...">
                                 <h4 id="results-text">Showing results for: <b id="search-string">Array</b></h4>
 		                          <ul id="results"></ul>
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
                                 </button>
-                            </span>
+                            </span>';}?>
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li>
-                            <a <?php if($_GET['module']=='accueil') { echo' class="active"'; } ?> href="index.php?module=accueil&action=index"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                        </li>
-                        <li>
-                            <a <?php if($_GET['module']=='menu') { echo' class="active"'; } ?> href="index.php?module=menu&action=index"><i class="fa fa-list"></i> Liste des cartes / menus</a>
-                        </li>
-                        <li>
-                            <a <?php if($_GET['module']=='commandes') { echo' class="active"'; } ?> href="index.php?module=commandes&action=index"><i class="fa fa-list"></i> Liste des commandes</a>
-                        </li>
-                        <li>
-                            <a <?php if($_GET['module']=='clients') { echo' class="active"'; } ?> href="index.php?module=clients&action=index"><i class="fa fa-list"></i> Liste des clients</a>
-                        </li>
-                        <li>
-                            <a <?php if($_GET['module']=='restaurants') { echo' class="active"'; } ?> href="index.php?module=restaurants&action=index"><i class="fa fa-cog"></i> Restaurant</a>
-                        </li>
-                        <li>
-                            <a <?php if($_GET['module']=='compte') { echo' class="active"'; } ?> href="index.php?module=compte&action=index"><i class="fa fa-cog"></i> Compte</a>
-                        </li>
+
+                        <?php if(isset($_SESSION['resto_actif_valid'])) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='accueil') { echo' class="active"'; }  echo 'href="index.php?module=accueil&action=index"> <i class="fa fa-dashboard fa-fw"></i> Dashboard</a>';
+                        echo'</li>';}?>
+
+                        <?php if(isset($_SESSION['resto_actif_valid'])) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='menu') { echo'<a class="active"'; } echo 'href="index.php?module=menu&action=index"><i class="fa fa-list"></i> Liste des cartes / menus</a>';
+                        echo'</li>';}?>
+
+                        <?php if(isset($_SESSION['resto_actif_valid'])) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='commandes') { echo'<a class="active"'; } echo 'href="index.php?module=commandes&action=index"><i class="fa fa-list"></i> Liste des commandes</a>';
+                        echo '</li>';}?>
+
+                        <?php if(isset($_SESSION['resto_actif_valid'])) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='clients') { echo'<a class="active"'; } echo 'href="index.php?module=clients&action=index"><i class="fa fa-list"></i> Liste des clients</a>';
+                        echo '</li>';}?>
+
+
+                        <!-- RESTO VALID / FIRST RESTO / RESTO EN ATTENTE -->
+
+                        <?php if(($_SESSION['resto_actif_attente']) == 0) {
+
+                            if(isset($_SESSION['resto_actif_valid'])) {
+                            echo '<li>';
+                                echo'<a '; if($_GET['module']=='restaurant') { echo' class="active"'; } echo 'href="index.php?module=restaurant&action="><i class="fa fa-cog"></i> Restaurant</a>';
+                            echo '</li>';}
+
+                            else {
+                            echo '<li>';
+                                echo'<a '; if($_GET['module']=='restaurant') { echo' class="active"'; } echo 'href="index.php?module=restaurant&action=first_resto"><i class="fa fa-cog"></i> Restaurant</a>';
+                            echo '</li>';}
+                        }?>
+
+                        <?php if(($_SESSION['resto_actif_attente']) == 1) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='restaurant') { echo' class="active"'; } echo 'href="index.php?module=restaurant&action=attente_actif"><i class="fa fa-cog"></i> Restaurant</a>';
+                        echo '</li>';}?>
+
+                        <!---_______________________________________________-->
+
+
+                        <?php if(isset($_SESSION['resto_actif_valid'])) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='compte') { echo'<a class="active"'; } echo 'href="index.php?module=compte&action=index"><i class="fa fa-cog"></i> Compte</a>';
+                        echo '</li>';}?>
                        
                     </ul>
                 </div>

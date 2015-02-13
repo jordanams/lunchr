@@ -22,9 +22,8 @@
 								$ordre = $row['lm_ordre']+1;
 								echo '<div class="col-md-4">';
 								echo '<label class="mise_ef">Position n°'.$ordre.'</label>';
-								echo '<select id="id_menu" name="id_menu" class="form-control">';
-								echo '<option value="'.$row['lm_ordre'].'">'.$row['lm_nom'].'</option>';
-								echo '</select> </div>';
+								echo '<input disabled="disabled" id="id_menu" name="id_menu" class="form-control" value="'.$row['lm_nom'].'" ">';
+								echo '</div>';
 							}
 							?>
 

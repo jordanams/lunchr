@@ -375,7 +375,6 @@ table.dataTable thead .sorting:after {
     height: 150px;
 }
 
-
 #details_gauche_resto {
     text-align: center;
     width: 100%;
@@ -384,6 +383,7 @@ table.dataTable thead .sorting:after {
 h4#results-text {
 	display: none;
 }
+
 ul#results {
 	display: none;
 	width: 360px;
@@ -396,6 +396,7 @@ ul#results {
 	-moz-box-shadow: rgba(0,0,0,.15) 0 1px 3px;
 	box-shadow: rgba(0, 0, 0, .15) 0 1px 3px;
 }
+
 ul#results li {
 	padding: 8px;
 	cursor: pointer;
@@ -452,6 +453,11 @@ tr a {
 }
 
 .actif_warning {
-    background-color: #f14f51;
+    background-color: rgba(241, 79, 81, 0.92);
     color: black;
+}
+
+.mise_ef_horraire {
+    margin-top: 10px;
+    margin-bottom: 18px;
 }

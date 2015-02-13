@@ -23,11 +23,11 @@
 	                  </tr>
 
 	                  <?php foreach ($afficher_menu as $key => $row) {
-	                              echo"<tr>";
+	                              echo'<tr class="'; if($row['lm_actif'] == 0) {echo"actif_warning";} else {echo"actif_success";} echo'">';
 	                              echo"<td>".$row['lce_nom']."</td>";
 	                              echo"<td>".$row['lm_nom']."</td>";
-	                              echo'<td><a href="index.php?module=menu&action=details_menu&id='.$row['lm_id'].'">Détails</a></td>';
-	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_menu&id='.$row['lm_id'].'" onclick="return confirm_delete_menu()">Supprimer</a></td>';
+	                              echo'<td><a href="index.php?module=menu&action=details_carte&id_menu='.$row['lm_id'].'&id_carte='.$row['lce_id'].'">Détails</a></td>';
+	                              echo'<td id="supp1"><a href="index.php?module=menu&action=supp_menu&id_menu='.$row['lm_id'].'" onclick="return confirm_delete_menu()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>

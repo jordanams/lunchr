@@ -18,8 +18,8 @@
 
 						<!-- Text input-->
 						<div class="form-group">
-						  <label class="col-md-1 control-label" for="textinput">Nom</label>  
-						  <div class="col-md-3">
+						  <label class="col-md-3 control-label" for="textinput">Nom</label>  
+						  <div class="col-md-5">
 						  	<input required id="nom_carte" name="nom_carte" type="text" placeholder="Nom" class="form-control input-md">  
 						  </div>
 						</div>
@@ -27,8 +27,8 @@
 
 						<!-- Button -->
 						<div class="form-group">
-						  <label class="col-md-1 control-label" for="singlebutton">Valider</label>
-						  <div class="col-md-4">
+						  <label class="col-md-3 control-label" for="singlebutton">Valider</label>
+						  <div class="col-md-5">
 						    <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Valider</button>
 						  </div>
 						</div>

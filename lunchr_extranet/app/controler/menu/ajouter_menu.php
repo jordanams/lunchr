@@ -4,7 +4,6 @@ include('../app/model/menu/afficher_carte.php');
 include('../app/model/menu/ajouter_menu.php');
 
 	if(isset($_GET['logout'])) {
-		session_start();
 		session_destroy();
 		header('location:index.php?module=login&action=index&logout=1');
 		exit;
@@ -23,7 +22,7 @@ include('../app/model/menu/ajouter_menu.php');
 		else {
 			$insert = ajouter_menu($_SESSION['id_resto'], $_POST['id_carte'], $_POST['nom_menu'], $count_menu[0]['COUNT(lm_id)']);
 			if($insert = true) {
-				header('Location:index.php?module=menu&action=liste_menu&insert_menu=1');
+				header('Location:index.php?module=menu&action=ajouter_menu&insert_menu=1');
 			}
 		}
 	}

@@ -1,6 +1,8 @@
 <?php
-session_name('lunchr');
+
+session_name('lunchr_extranet');
 session_start();
+
 if(isset($_GET['go']) || isset($_GET['id_carte'])) {
  
     $json = array();

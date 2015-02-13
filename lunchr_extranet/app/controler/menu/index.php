@@ -19,11 +19,11 @@ include('../app/model/menu/afficher_carte.php');
 		}
 	}
 
-$select_resto = select_resto($_SESSION['user_id']);
-if(isset($_SESSION['id_resto']))
-{
-$afficher_carte = afficher_carte($_SESSION['user_id'], $_SESSION['id_resto']);
-$select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
+if(isset($_SESSION['id_resto'])) {
+	$afficher_carte = afficher_carte($_SESSION['user_id'], $_SESSION['id_resto']);
+	$select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
 }
+
+$select_resto = select_resto($_SESSION['user_id']);
 include('../app/view/menu/index.php'); 
 ?>

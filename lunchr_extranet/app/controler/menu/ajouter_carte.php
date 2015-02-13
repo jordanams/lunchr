@@ -3,7 +3,6 @@ include('../app/model/menu/select_resto.php');
 include('../app/model/menu/ajouter_carte.php');
 
 	if(isset($_GET['logout'])) {
-		session_start();
 		session_destroy();
 		header('location:index.php?module=login&action=index&logout=1');
 		exit;

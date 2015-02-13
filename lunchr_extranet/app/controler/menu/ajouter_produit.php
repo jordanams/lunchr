@@ -11,19 +11,14 @@ include('../app/model/menu/ajouter_produit.php');
 		exit;
 	}
 
-if(!isset($_FILES['ch_file1']))
-	{
-		$avatar1= "";
-	}
-
 		if(isset($_POST['id_menu'])) {
-
+			if(!isset($_FILES['ch_file1'])){ $avatar1 = "";}
 			$insert = ajouter_produit(	$_SESSION['id_resto'],
 										$_POST['id_menu'], 
 										$_POST['nom_produit'],
 										$_POST['prix_produit'], 
 										$_POST['desc_produit'], 
-										$avatar1);
+										$_FILES['ch_file1']);
 			if($insert = true) {
 				header('Location:index.php?module=menu&action=ajouter_produit&insert_produit=1');
 			}
