@@ -14,7 +14,7 @@
 					<fieldset>
 
 						<!-- Form Name -->
-						<legend>Ajouter des produits</legend>
+						<legend>Ajouter un produit</legend>
 
 						<div class="form-group">
 						  <label class="col-md-3 control-label" for="selectbasic">Séléctioner une carte</label>
@@ -84,23 +84,23 @@
 							</div>
 							
 							<div class="form-group">
-								<label class="col-md-3 control-label" for="selectbasic">Nom du/des produit(s)</label>
+								<label class="col-md-3 control-label" for="selectbasic">Nom du produit</label>
 								<div class="col-md-5">
-									<input id="nom_produit" name="nom_produit" type="text" placeholder="Nom du/des produit(s)" class="form-control input-md">
+									<input id="nom_produit" name="nom_produit" type="text" placeholder="Nom du produit" class="form-control input-md">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-md-3 control-label" for="selectbasic">Prix du/des produit(s)</label>
+								<label class="col-md-3 control-label" for="selectbasic">Prix du produit</label>
 								<div class="col-md-5">
-									<textarea id="prix_produit" name="prix_produit" class="form-control" placeholder="Prix du/des produit(s)"></textarea>
+									<input id="prix_produit" name="prix_produit" type="text" placeholder="Prix du produit" class="form-control input-md">
 								</div>
 							</div>
 
 							<div class="form-group">
-								<label class="col-md-3 control-label" for="selectbasic">Description du/des produit(s)</label>
+								<label class="col-md-3 control-label" for="selectbasic">Description du produit</label>
 								<div class="col-md-5">
-									<textarea id="desc_produit" name="desc_produit" class="form-control" placeholder="Description du/des produit(s)"></textarea>
+									<textarea id="desc_produit" name="desc_produit" class="form-control" placeholder="Description du produit"></textarea>
 								</div>
 							</div>
 

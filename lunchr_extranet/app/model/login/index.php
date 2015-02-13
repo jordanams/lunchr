@@ -15,7 +15,7 @@ function verif_user($login, $password) {
 			$count = count($resultat);
 
 
-			if($count == 1) {
+			if($count == true) {
 
 
 				if ($resultat[0]['lup_actif'] == 0) {

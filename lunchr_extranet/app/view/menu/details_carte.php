@@ -24,7 +24,7 @@
 		                		<?php
 				           		echo'<tr class="'; if($select_carte_actif[0]['lce_actif'] == 0) {echo"actif_warning";} else {echo"actif_success";} echo'">';
 	                            echo"<td>"; echo $select_carte_actif[0]['lce_nom']; echo "</td>";
-	                            echo'<td><a href="index.php?module=menu&action=modifier_carte&id_carte='.$verif_carte[0]['lce_id'].'"> Modifier</a></td>';
+	                            echo'<td><a href="index.php?module=menu&action=update_carte&id_carte='.$verif_carte[0]['lce_id'].'"> Modifier</a></td>';
 	                            if($select_carte_actif[0]['lce_actif'] == 0) {echo'<td><a href="index.php?module=menu&action=activer_carte&id_carte='.$verif_carte[0]['lce_id'].'">Activer</a></td>';} else {echo"";} 
 	                            echo'<td id="supp1"><a href="index.php?module=menu&action=supp_carte&id_carte='.$verif_carte[0]['lce_id'].'" onclick="return confirm_delete_carte()">Supprimer</a></td>';
 	                            echo"</tr>";
@@ -45,7 +45,7 @@
 				           	<?php foreach ($verif_menu as $key => $row) {
 				           			echo'<tr class="'; if($row['lm_actif'] == 0) {echo"actif_warning";} else {echo"actif_success";} echo'">';
 	                              	echo"<td>".$row['lm_nom']."</td>";
-	                             	echo'<td><a href="index.php?module=menu&action=modifier_menu&id_menu='.$row['lm_id'].'"> Modifier</a></td>';
+	                             	echo'<td><a href="index.php?module=menu&action=update_menu&id_menu='.$row['lm_id'].'&id_carte='.$row['lce_id'].'"> Modifier</a></td>';
 	                             	if($row['lm_actif'] == 0) {echo'<td><a href="index.php?module=menu&action=activer_menu&id_menu_actif='.$row['lm_id'].'"> Activer</a></td>';} 
 	                             	else {echo'<td><a href="index.php?module=menu&action=activer_menu&id_menu_null='.$row['lm_id'].'"> Désactiver</a></td>';}
 	                              	echo'<td id="supp1"><a href="index.php?module=menu&action=supp_menu&id_menu='.$row['lm_id'].'&menu_detail" onclick="return confirm_delete_menu()">Supprimer</a></td>';
@@ -71,7 +71,7 @@
 					           			echo'<tr class="'; if($row['lp_actif'] == 0) {echo"actif_warning";} else {echo"actif_success";} echo'">';
 		                              	echo"<td>".$row['lm_nom']."</td>";
 		                              	echo"<td>".$row['lp_nom']."</td>";
-		                             	echo'<td><a href="index.php?module=menu&action=modifier_produit&id_produit='.$row['lp_id'].'"> Modifier</a></td>';
+		                             	echo'<td><a href="index.php?module=menu&action=update_produit&id_produit='.$row['lp_id'].'"> Modifier</a></td>';
 		                             	if($row['lp_actif'] == 0) {echo'<td><a href="index.php?module=menu&action=activer_produit&id_produit_actif='.$row['lp_id'].'"> Activer</a></td>';} 
 		                             	else {echo'<td><a href="index.php?module=menu&action=activer_produit&id_produit_null='.$row['lp_id'].'"> Désactiver</a></td>';}
 		                              	echo'<td id="supp1"><a href="index.php?module=menu&action=supp_produit&id_produit='.$row['lp_id'].'&produit_detail" onclick="return confirm_delete_produit()">Supprimer</a></td>';

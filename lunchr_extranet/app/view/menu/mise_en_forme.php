@@ -7,12 +7,12 @@
 		        <?php include_once('../app/view/include/header_carte_menu.inc.php'); ?>
 				<br/>
 				<?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span><br/>'; } ?>
-				<?php //echo 'Carte sélectionné : &nbsp;&nbsp; '; echo '<span style="text-decoration:underline;"> </span>'; } ?>
-				<br/><br/>
+				<?php echo 'Carte sélectionné : &nbsp;&nbsp; '; echo '<span style="text-decoration:underline;">'; echo $afficher_carte_select[0]['lce_nom']; echo '</span>'; ?>
+				<br/><br/><br/><br/>
 
 
 						<!-- Form Name -->
-						<legend>Mise en forme actuel de la carte</legend>
+						<legend>Mise en forme actuel des menus de la carte</legend>
 						<br/>
 
 

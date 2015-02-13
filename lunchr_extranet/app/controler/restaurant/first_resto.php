@@ -8,12 +8,13 @@ include('../app/model/restaurant/insert_resto.php');
 		exit;
 	}
 
+
+	if(isset($_POST['desc_resto'])) {
+
 	if(!isset($_FILES['ch_files1'])) {$avatar1= "";}
 	if(!isset($_FILES['ch_files2'])) {$avatar2= "";}
 	if(!isset($_FILES['ch_files3'])) {$avatar3= "";}
 	if(!isset($_FILES['ch_files4'])) {$avatar4= "";}
-
-	if(isset($_POST['desc_resto'])) {
 
 		$insert = insert_resto( $_POST['desc_resto'],
 								$avatar1,
@@ -39,10 +40,11 @@ include('../app/model/restaurant/insert_resto.php');
 												    $_POST['horraire_soir_ouverture'.$y],
 												    $_POST['horraire_soir_fermeture'.$y],
 												    $_SESSION['id_resto']);
-													$y++;
+								$y++;
 							}
 					}
 				
+
 			if ($notif_insert = true) {
 				$attente = $_SESSION['resto_actif_attente'] = $_SESSION['resto_actif_attente']+1;
 				header('Location:index.php?module=restaurant&action=attente_actif');

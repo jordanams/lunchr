@@ -4,7 +4,6 @@ include('../app/model/menu/mise_en_forme.php');
 
 
 	if(isset($_GET['logout'])) {
-		session_start();
 		session_destroy();
 		header('location:index.php?module=login&action=index&logout=1');
 		exit;
@@ -26,6 +25,7 @@ include('../app/model/menu/mise_en_forme.php');
 
 
 $select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
+$afficher_carte_select = afficher_carte_select($_SESSION['id_resto'], $_SESSION['id_carte_select']);
 $afficher_menu = afficher_menu($_SESSION['id_resto'], $_SESSION['id_carte_select']);
 
 include('../app/view/menu/mise_en_forme.php'); 

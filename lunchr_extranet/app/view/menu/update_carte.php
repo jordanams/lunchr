@@ -14,13 +14,13 @@
 					<fieldset>
 
 						<!-- Form Name -->
-						<legend>Modifier le nom du menu</legend>
+						<legend>Modifier le nom de la carte</legend>
 
 						<!-- Text input-->
 						<div class="form-group">
 						  <label class="col-md-3 control-label" for="textinput">Nom</label>  
 						  <div class="col-md-5">
-						  	<input value="<?php echo $verif_menu[0]['lm_nom']; ?>" required id="nom_menu" name="nom_menu" type="text" class="form-control input-md">  
+						  	<input value="<?php echo $verif_carte[0]['lce_nom']; ?>" required id="nom_carte" name="nom_carte" type="text" class="form-control input-md">  
 						  </div>
 						</div>
 

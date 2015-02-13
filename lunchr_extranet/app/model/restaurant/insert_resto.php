@@ -1,6 +1,5 @@
 <?php
 
-
 function insert_resto($desc_resto, $avatar1, $avatar2, $avatar3, $avatar4, $id_resto) {
 
 	/****************  Image n°1  ****************/
@@ -232,36 +231,35 @@ function insert_notif($id, $type)  {
 
 
 function insert_horraire_resto($jour, $horraire_ouverture_day, $horraire_fermeture_day, $horraire_ouverture_night, $horraire_fermeture_night, $id_resto) {
+	
+
 	global $connexion;
 	try {
-		$query = "insert into lunchr_horraire (lh_day, 
-													lh_open_day, 
-													lh_close_day,
-													lh_open_night, 
-													lh_close_night,
-													lr_id)
-										values (:day, 
-												:open_day, 
-												:close_day,
-												:open_night, 
-												:close_night,
-												:id_restaurant)";
-					
-		$curseur = $connexion->prepare($query); 
-		$curseur->bindValue(':day', $jour, PDO::PARAM_STR);
-		$curseur->bindValue(':open_day', $horraire_ouverture_day, PDO::PARAM_STR);
-		$curseur->bindValue(':close_day', $horraire_fermeture_day, PDO::PARAM_STR);
-		$curseur->bindValue(':open_night', $horraire_ouverture_night, PDO::PARAM_STR);
-		$curseur->bindValue(':close_night', $horraire_fermeture_night, PDO::PARAM_STR);
-		$curseur->bindValue(':id_restaurant', $id_resto, PDO::PARAM_STR);
-		$retour = $curseur->execute();
-		$curseur->closeCursor();	
-		return true;
-	}
+			$query = ("UPDATE lunchr_restaurants
+	  													SET
+	  													lh_day = :day,
+														lh_open_day = :open_day, 
+														lh_close_day =	:close_day,
+														lh_open_night = :open_night, 
+														lh_close_night = :close_night,
+														lr_id = :id_restaurant
+	  													WHERE lr_id = :id_restaurant");		
 
-	catch ( Exception $e ) {
-	die('Erreur Mysql : '.$e->getMessage());
-	}
+						
+			$curseur = $connexion->prepare($query); 
+			$curseur->bindValue(':day', $jour, PDO::PARAM_STR);
+			$curseur->bindValue(':open_day', $horraire_ouverture_day, PDO::PARAM_STR);
+			$curseur->bindValue(':close_day', $horraire_fermeture_day, PDO::PARAM_STR);
+			$curseur->bindValue(':open_night', $horraire_ouverture_night, PDO::PARAM_STR);
+			$curseur->bindValue(':close_night', $horraire_fermeture_night, PDO::PARAM_STR);
+			$curseur->bindValue(':id_restaurant', $id_resto, PDO::PARAM_STR);
+			$retour = $curseur->execute();
+			$curseur->closeCursor();	
+			return true;
+		}
+			catch ( Exception $e ) {
+				die('Erreur Mysql : '.$e->getMessage());
+			}
 }
 
 ?>
