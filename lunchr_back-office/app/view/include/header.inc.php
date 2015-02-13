@@ -549,11 +549,7 @@ init();
                             <div class="input-group custom-search-form">
                                 <input type="text" id="search" class="form-control" placeholder="Search...">
                                 <h4 id="results-text">Showing results for: <b id="search-string">Array</b></h4>
-<<<<<<< HEAD
-		<ul id="results"></ul>
-=======
 		                          <ul id="results"></ul>
->>>>>>> FETCH_HEAD
                                 <span class="input-group-btn">
                                 <button class="btn btn-default" type="button">
                                     <i class="fa fa-search"></i>
@@ -644,47 +640,6 @@ if(navigator.geolocation)
 
 
 
-<<<<<<< HEAD
-	function search() {
-		var query_value = $('input#search').val();
-		$('b#search-string').html(query_value);
-		if(query_value !== ''){
-			$.ajax({
-				type: "POST",
-				url: "../app/controler/accueil/search.php",
-				data: { query: query_value },
-				cache: false,
-				success: function(html){
-					$("ul#results").html(html);
-				}
-			});
-		}return false;    
-	}
-
-	$("input#search").live("keyup", function(e) {
-		// Set Timeout
-		clearTimeout($.data(this, 'timer'));
-
-		// Set Search String
-		var search_string = $(this).val();
-
-		// Do Search
-		if (search_string == '') {
-			$("ul#results").fadeOut();
-			$('h4#results-text').fadeOut();
-		}else{
-			$("ul#results").fadeIn();
-			$('h4#results-text').fadeIn();
-			$(this).data('timer', setTimeout(search, 100));
-		};
-	});
-
-});
-
-
-
-=======
->>>>>>> FETCH_HEAD
 
 </script>
 

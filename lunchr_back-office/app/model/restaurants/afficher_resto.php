@@ -1,16 +1,13 @@
 <?php
 function afficher_resto() {
+	
 		global $connexion;
 		try {
-  			$select = $connexion -> prepare("SELECT lr_nom, 
-  													lr_adresse, 
-  													lr_description, 
-  													lr_id,
-  													lr_latitude,
-  													lr_longitude
-  													FROM lunchr_restaurants");
+  			$select = $connexion -> prepare("SELECT *
+  												FROM lunchr_restaurants
+  												WHERE lr_actif_valid = 1");
 			$select -> execute();
-			$select -> setFetchMode(PDO::FETCH_NUM);
+			$select -> setFetchMode(PDO::FETCH_ASSOC);
 			$resultat = $select -> fetchAll();
 			return $resultat;
 		}
