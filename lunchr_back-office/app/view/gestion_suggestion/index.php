@@ -8,22 +8,26 @@
         </ul>
       </div>
 
-<!-- Form Name -->
-<legend>Suggestions actuelle :</legend>
-<br/>
-<br/>
+      <div class="col-lg-12">
+        <br/>
+        <!-- Form Name -->
+        <legend>Suggestions actuelle :</legend>
+        <br/>
+        <br/>
 
-<?php foreach ($gestion_suggestion as $key => $row) {
-      echo"<div class='form-group'>"; 
-      echo'<label class="col-md-3 control-label" for="textinput">Suggestion :</label>';
-      echo"<div class='col-md-6'>";
-      echo'<div>'.$row['lr_nom'].' <br/> '.$row['lr_adresse'].'</div>';
-      echo"</div>";
-      echo"</div>";
-      echo'<br/>';
-      echo"<br/>";
-}
-?>
+        <?php foreach ($gestion_suggestion as $key => $row) {
+              $ordre = $key+1;
+              echo"<div class='col-lg-12'>"; 
+              echo'<label class="col-md-3 control-label" for="textinput">Suggestion '.$ordre.' :</label>';
+              echo"<div class='col-md-6'>";
+              echo'<div>'.$row['lr_nom'].' <br/> '.$row['lr_adresse'].'</div><br/>';
+              echo"</div>";
+              echo"</div>";
+              echo'<br/>';
+              echo"<br/>";
+        }
+        ?>
+      </div>
 
 
 <?php include_once('../app/view/include/footer.inc.php'); ?>

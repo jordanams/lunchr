@@ -25,7 +25,7 @@ function afficher_resto_na() {
 		try {
   			$select = $connexion -> prepare("SELECT *
   												FROM lunchr_restaurants
-  												WHERE lr_actif_attente = 0 and lr_actif_valid = 0");
+  												WHERE lr_actif_attente = 0 and lr_actif_valid = 0 and lr_supp_attente = 0");
 			$select -> execute();
 			$select -> setFetchMode(PDO::FETCH_ASSOC);
 			$resultat = $select -> fetchAll();

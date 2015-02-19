@@ -14,19 +14,17 @@
 	                        <th height="40" width="110">Nom</th>
 	                        <th height="40" width="110">Adresse</th>
 	                        <th height="40" width="110">Description</th>
-	                        <th height="40" width="110">Désactiver</th>
 	                        <th height="40" width="110">Fiche</th>
 	                        <th height="40" width="110">Supprimer</th>
 	                  </tr>
 
-	                  <?php foreach ($afficher_resto as $key => $row) {
-	                              echo'<tr class="'; if($row['lr_actif_valid'] == 1) {echo"actif_success";} echo'">';
+	                  <?php foreach ($afficher_resto_en_suppression as $key => $row) {
+	                              echo'<tr class="'; if($row['lr_supp_attente'] == 1) {echo"actif_warning";} echo'">';
 	                              echo"<td>".$row['lr_nom']."</td>";
 	                              echo"<td>".$row['lr_adresse']."</td>";
 	                              echo"<td>".$row['lr_description']."</td>";
 	                              echo'<td><a href="index.php?module=restaurants&action=details_resto&id='.$row['lr_id'].'">Détails</a></td>';
-	                              echo'<td><a href="index.php?module=restaurants&action=activer_desactiver_resto&id_desactiver_resto='.$row['lr_id'].'">Désactiver</a></td>';
-	                              echo'<td id="supp1"><a href="index.php?module=restaurants&action=supp_resto&id_carte='.$row['lr_id'].'&id_resto_index" onclick="return confirm_delete_resto()">Supprimer</a></td>';
+	                              echo'<td id="supp1"><a href="index.php?module=restaurants&action=supp_resto&id_carte='.$row['lr_id'].'&id_resto_supp" onclick="return confirm_delete_resto()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>

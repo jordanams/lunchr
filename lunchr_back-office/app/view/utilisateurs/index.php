@@ -11,7 +11,7 @@
            	</div>
 
 
-           	<div>
+           	<div class="col-lg-12">
 	            <table id="tableau" class="table table-hover">
 
 	                 	<tr>

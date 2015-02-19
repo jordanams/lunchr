@@ -18,7 +18,7 @@ if(isset($_COOKIE['Lunchr_Login']))
     <title>Lunchr - Back office</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
     <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">

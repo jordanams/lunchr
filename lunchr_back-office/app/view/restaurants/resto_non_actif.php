@@ -7,7 +7,7 @@
 
            </div>
 
-           <div>
+           <div class="col-lg-12">
 	            <table id="tableau" class="table table-hover">
 
 	                  <tr>
@@ -24,7 +24,7 @@
 	                              echo"<td>".$row['lr_adresse']."</td>";
 	                              echo"<td>".$row['lr_description']."</td>";
 	                              echo'<td><a href="index.php?module=restaurants&action=details_resto&id='.$row['lr_id'].'">Détails</a></td>';
-	                              echo'<td id="supp1"><a href="index.php?module=restaurants&action=supp_resto&id_carte='.$row['lr_id'].'&id_carte_actif" onclick="return confirm_delete_resto()">Supprimer</a></td>';
+	                              echo'<td id="supp1"><a href="index.php?module=restaurants&action=supp_resto&id_carte='.$row['lr_id'].'&id_resto_actif" onclick="return confirm_delete_resto()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>

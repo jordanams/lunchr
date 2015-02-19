@@ -15,20 +15,17 @@ $modifier_suggestion = modifier_suggestion();
 
 //print_r($modifier_suggestion);
 
-$i=0;
+	$i=0;
 	if(isset($_POST['resto_suggestion'.$i])) {
 		
-		while($i<8)
-		{
-		$update = modifier_suggestion_update($_POST['resto_suggestion'.$i], 
-										 $i);
-		echo $_POST['resto_suggestion'.$i];
-		$i++;
+		while($i<8) {
+			$update = modifier_suggestion_update($_POST['resto_suggestion'.$i], $i);
+			//echo $_POST['resto_suggestion'.$i];
+			$i++;
 		}
 
-
 		if($update = true) {
-			header('Location:index.php?module=gestion_suggestion&action=index&update_suggest=1');
+			header('Location:index.php?module=gestion_suggestion&action=index');
 		}
 	}
 
