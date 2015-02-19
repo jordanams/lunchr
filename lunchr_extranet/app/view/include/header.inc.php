@@ -151,7 +151,6 @@ if(isset($_GET['stop_menu'])) {
   }
 }
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -416,7 +415,7 @@ if(isset($_SESSION['admin'])) {
 
                             if(isset($_SESSION['resto_actif_valid'])) {
                             echo '<li>';
-                                echo'<a '; if($_GET['module']=='restaurant') { echo' class="active"'; } echo 'href="index.php?module=restaurant&action="><i class="fa fa-cog"></i> Restaurant</a>';
+                                echo'<a '; if($_GET['module']=='restaurant') { echo' class="active"'; } echo 'href="index.php?module=restaurant&action=liste_restaurant"><i class="fa fa-cog"></i> Restaurant</a>';
                             echo '</li>';}
 
                             else {

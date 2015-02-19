@@ -49,7 +49,7 @@
 		}
 
 		else {
-           	echo'<div class="tableau_carte">
+           	echo'<div class="tableau_carte col-lg-12">
 	            <table id="tableau" class="table table-bordered table-hover">
 
 	                  <tr>

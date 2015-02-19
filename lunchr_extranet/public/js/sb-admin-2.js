@@ -28,7 +28,7 @@ $(function() {
 })
 
 
-/***************  Fonction supprimer carte / menu / produit  ***************/
+/***************  Fonction supprimer carte / menu / produit / restaurant  ***************/
 
 /*Fonction supprimer carte*/
 
@@ -46,6 +46,12 @@ function confirm_delete_menu() {
 
 function confirm_delete_produit() {
   return confirm('Etes-vous sûr de vouloir supprimer ce produit ?');
+}
+
+/*Fonction supprimer restaurant*/
+
+function confirm_delete_resto() {
+  return confirm('Etes-vous sûr de vouloir supprimer ce restaurant ?');
 }
 
 
@@ -91,6 +97,3 @@ function codeAddress() {
     }
   });
 }
-
-
-

@@ -36,7 +36,6 @@ function verif_user($login, $password) {
 								$_SESSION['login'] = $_GET['login'];
 								$_SESSION['user_id'] = $resultat[0]['lup_id'];
 								$_SESSION['admin'] = $resultat[0]['lup_admin'];
-								$_SESSION['resto_actif_valid'] = $resultat[0]['lr_actif_valid'];
 								$_SESSION['resto_actif_attente'] = $resultat[0]['lr_actif_attente'];
 								header('Location:index.php?module=restaurant&action=attente_actif');
 							}

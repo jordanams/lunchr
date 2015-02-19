@@ -12,7 +12,7 @@
            </div>
 
 
-           <div class="tableau_carte">
+           <div class="tableau_carte col-lg-12">
 	            <table id="tableau" class="table table-bordered table-hover">
 
 	                  <tr>
