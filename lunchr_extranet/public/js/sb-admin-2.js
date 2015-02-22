@@ -28,7 +28,7 @@ $(function() {
 })
 
 
-/***************  Fonction supprimer carte / menu / produit / restaurant  ***************/
+/***************  Fonction supprimer carte / menu / produit / restaurant / modifier et supprimer compte ***************/
 
 /*Fonction supprimer carte*/
 
@@ -52,6 +52,25 @@ function confirm_delete_produit() {
 
 function confirm_delete_resto() {
   return confirm('Etes-vous sûr de vouloir supprimer ce restaurant ?');
+}
+
+/*Fonction modifier compte*/
+
+function confirm_modifier_compte() {
+  var champA = document.getElementById("new_mdp_user").value;
+  var champB = document.getElementById("new_try_mdp_user").value;
+  if (champA == champB) {
+    return confirm('Etes-vous sûr de vouloir modifier vos informations ?');
+  }
+  else {
+    return false;
+  }
+}
+
+/*Fonction supprimer compte*/
+
+function confirm_supprimer_compte() {
+  return confirm('Etes-vous sûr de vouloir supprimer votre compte ? Cela supprimera aussi votre/vos restaurant(s)');
 }
 
 

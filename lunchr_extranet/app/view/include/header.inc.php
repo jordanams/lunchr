@@ -92,7 +92,7 @@ if(isset($_GET['logout'])) {
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////////////////         CARTE / MENU / PRODUITS        ///////////////////
+//////////////////         CARTE / MENU / PRODUITS / COMPTE       ///////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // INSERTION D'UNE CARTE
@@ -148,6 +148,14 @@ if(isset($_GET['stop_menu'])) {
 
     if($_GET['stop_menu'] == 1) {
         echo '<div class="alert alert-danger" role="alert">Vous ne pouvez pas ajouter plus de huit menus par carte</div>';
+  }
+}
+
+// MODIFICATION COMPTE
+if(isset($_GET['update_user'])) {
+
+    if($_GET['update_user'] == 1) {
+        echo '<div class="alert alert-success" role="alert">Votre compte a bien été modifié</div>';
   }
 }
 

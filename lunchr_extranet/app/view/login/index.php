@@ -78,6 +78,16 @@ if(isset($_GET['session'])) {
   }
 
 }
+
+// SUPPRESSION COMPTE
+if(isset($_GET['supp_user'])) {
+  
+  if($_GET['supp_user'] == 1) {
+       echo '<div class="alert alert-danger" role="alert">Votre compte sera supprimé dans un délais de 48 heures ainsi que votre/vos restaurant(s).
+                                                    <br/>Vous reseverez un email vous indiquant la suppression complete de votre compte ainsi que de votre/vos restaurant(s).</div>';
+  }
+
+}
 ?>
 
     <div class="container">
