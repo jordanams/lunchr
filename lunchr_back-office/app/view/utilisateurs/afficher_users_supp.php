@@ -19,14 +19,15 @@
 	                        <th height="40" width="110">Supprimer</th>
 	                  	</tr>
 
-	                  <?php foreach ($afficher_users as $key => $row) {
+	                  <?php foreach ($afficher_users_supp as $key => $row) {
 	                              echo"<tr>"; 
-	                              echo"<td>".$row['lu_nom']."</td>";
-	                              echo"<td>".$row['lu_prenom']."</td>";
-	                              echo"<td>".$row['lu_tel']."</td>";
-	                              echo"<td>".$row['lu_mail']."</td>";
-	                              echo'<td><a href="index.php?module=utilisateurs&action=details_users&id='.$row['lu_id'].'">Détails</a></td>';
-	                              echo'<td><a href="index.php?module=utilisateurs&action=supp_users&id='.$row['lu_id'].'&type=normal" onclick="return confirm_delete_users()">Supprimer</a></td>';
+	                              echo"<td>".$row['lup_nom']."</td>";
+	                              echo"<td>".$row['lup_prenom']."</td>";
+	                              echo"<td>".$row['lup_tel']."</td>";
+	                              echo"<td>".$row['lup_mail']."</td>";
+	                              echo"</td>";
+	                              echo'<td><a href="index.php?module=utilisateurs&action=details_users_pro&id='.$row['lup_id'].'">Détails</a></td>';
+	                              echo'<td><a href="index.php?module=utilisateurs&action=supp_users&id='.$row['lup_id'].'&type=pro" onclick="return confirm_delete_users()">Supprimer</a></td>';
 	                              echo"</tr>";
 	                        }
 	                  ?>
