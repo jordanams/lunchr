@@ -1,5 +1,4 @@
 <?php
-
 function select_resto($id_user) {
 		global $connexion;
 		try {

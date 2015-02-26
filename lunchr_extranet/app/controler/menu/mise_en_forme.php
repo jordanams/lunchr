@@ -24,9 +24,8 @@ include('../app/model/menu/mise_en_forme.php');
     }
 
 
+$afficher_menu = afficher_menu($_SESSION['id_resto'], $_SESSION['id_carte_select']);
 $select_resto_afficher = select_resto_afficher($_SESSION['user_id'], $_SESSION['id_resto']);
 $afficher_carte_select = afficher_carte_select($_SESSION['id_resto'], $_SESSION['id_carte_select']);
-$afficher_menu = afficher_menu($_SESSION['id_resto'], $_SESSION['id_carte_select']);
-
 include('../app/view/menu/mise_en_forme.php'); 
 ?>

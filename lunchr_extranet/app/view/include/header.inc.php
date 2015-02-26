@@ -406,6 +406,11 @@ if(isset($_SESSION['admin'])) {
                             echo'<a '; if($_GET['module']=='menu') { echo'<a class="active"'; } echo 'href="index.php?module=menu&action=index"><i class="fa fa-list"></i> Liste des cartes / menus</a>';
                         echo'</li>';}?>
 
+                        <?php if(isset($_SESSION['resto_actif_valid'],$_SESSION['id_resto'])) {
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='quantites-produits') { echo'<a class="active"'; } echo 'href="index.php?module=quantites-produits&action=index"><i class="fa fa-list"></i> Ajouter les quantités de produits</a>';
+                        echo'</li>';}?>
+
                         <?php if(isset($_SESSION['resto_actif_valid'])) {
                         echo '<li>';
                             echo'<a '; if($_GET['module']=='commandes') { echo'<a class="active"'; } echo 'href="index.php?module=commandes&action=index"><i class="fa fa-list"></i> Liste des commandes</a>';
