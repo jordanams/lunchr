@@ -443,10 +443,15 @@ img#img_position {
     margin-top: 15px;
 }
 
-tr a {
+td a {
     color: rgb(55, 53, 53);
     text-decoration: underline;    
 }
+
+th a {
+    color: rgb(55, 53, 53);   
+}
+
 
 .actif_success {
     background-color: #dff0d8;

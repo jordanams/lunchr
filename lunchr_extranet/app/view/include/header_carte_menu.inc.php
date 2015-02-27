@@ -1,10 +1,9 @@
 <ul class="nav nav-tabs nav-justified" role="tablist">
-    <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET["action"]=="changer_resto") { echo' class="active"'; } echo'><a href="index.php?module=menu&action=changer_resto">Changer de restaurant</a></li>'; }?>
     <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='index') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=index">Liste des cartes</a></li>'; }?>
     <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='liste_menu') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=liste_menu">Liste des menus</a></li>'; }?>
     <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='liste_produit') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=liste_produit">Liste des produits</a></li>'; }?>
     <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='ajouter_carte') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=ajouter_carte">Ajouter une carte</a></li>'; }?>
     <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='ajouter_menu') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=ajouter_menu">Ajouter un menu</a></li>'; }?>
     <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='ajouter_produit') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=ajouter_produit">Ajouter des produits</a></li>'; }?>
-    <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='select_mise_en_forme') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=select_mise_en_forme">Mise en forme</a></li>'; }?>
+    <?php if ($_SESSION['id_resto'] ==! "") {echo '<li role="presentation"'; if($_GET['action']=='select_mise_en_forme') { echo' class="active"'; } echo'><a href="index.php?module=menu&action=select_mise_en_forme">Mise <br/>en forme</a></li>'; }?>
 </ul>

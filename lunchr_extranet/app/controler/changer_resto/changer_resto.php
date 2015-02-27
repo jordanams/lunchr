@@ -1,10 +1,8 @@
 <?php
 include('../app/model/menu/select_resto.php');
-include_once('../app/model/accueil/index.php');
 
 	if(isset($_GET['logout'])) {
 		session_destroy();
-		setcookie("Login",'',time()-3600);
 		header('location:index.php?module=login&action=index&logout=1');
 		exit;
 	}
@@ -19,5 +17,5 @@ include_once('../app/model/accueil/index.php');
 	}
 
 $select_resto = select_resto($_SESSION['user_id']);
-include_once('../app/view/accueil/index.php'); 
+include('../app/view/changer_resto/changer_resto.php'); 
 ?>

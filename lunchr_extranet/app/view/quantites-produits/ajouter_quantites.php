@@ -13,14 +13,15 @@
         	<br/>
 	        <legend>Ajouter des quantités pour chaques produits</legend>
 	        <?php echo 'Restaurant sélectionné : &nbsp;&nbsp; '; foreach ($select_resto_afficher as $key => $row) { echo '<span style="text-decoration:underline;">'.$row['lr_nom'].'</span><br/>'; } ?>
-			<?php echo 'Carte sélectionné : &nbsp;&nbsp; '; echo '<span style="text-decoration:underline;">'; echo $afficher_carte_select[0]['lce_nom']; echo '</span>'; ?>
-			<br/><br/><br/>
+			<?php echo 'Carte sélectionné : &nbsp;&nbsp; <span style="text-decoration:underline;">'; echo $afficher_carte_select[0]['lce_nom']; echo '</span><br/>'; ?>
+			<?php echo 'Menu sélectionné : &nbsp;&nbsp;  <span style="text-decoration:underline;"></span>'; ?>
+			<br/><br/>
 
 			<ul class="nav nav-tabs nav-justified" role="tablist">
 				<?php foreach ($verif_menu as $key => $row) {
 	        		echo'<li role="presentation"';  echo'class="active cursor"'; echo '><a href="index.php?module=quantites-produits&action=ajouter_quantites&id_menu='.$row['lm_id'].'&id_carte='.$row['lce_id'].'">'.$row['lm_nom'].'</a></li>';
 				}?>
-			</ul>
+			</ul><br/>
 
 			<div class="tableau_carte">
 	            <table id="tableau" class="table table-bordered table-hover">

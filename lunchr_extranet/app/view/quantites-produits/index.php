@@ -15,14 +15,23 @@
             <table id="tableau" class="table table-bordered table-hover">
 
                   <tr>
-                  	<th height="40" width="110">Nom de la carte</th>
-                    <th height="40" width="110">Quantités de produits disponibles</th>
+                  	<th height="40" width="110"><?php if (!isset($_GET['ordre'])) {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nom_produit_asc">Nom du produit</a>';}
+                                                      else if ($_GET['ordre'] == "nom_produit_asc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nom_produit_desc">Nom du produit <i class="fa fa-arrow-up"></i></a>';}
+                                                      else if ($_GET['ordre'] == "nom_produit_desc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nom_produit_asc">Nom du produit <i class="fa fa-arrow-down"></i></a>';}
+                                                      else if ($_GET['ordre'] == "nbr_produit_dispo_desc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nom_produit_asc">Nom du produit</a>';}
+                                                      else if ($_GET['ordre'] == "nbr_produit_dispo_asc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nom_produit_asc">Nom du produit</a>';}?></th>
+
+                    <th height="40" width="110"><?php if (!isset($_GET['ordre'])) {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nbr_produit_dispo_asc">Quantités de produits disponibles <i class="fa fa-arrow-down"></i></a>';}
+                                                      else if ($_GET['ordre'] == "nbr_produit_dispo_desc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nbr_produit_dispo_asc">Quantités de produits disponibles <i class="fa fa-arrow-down"></i></a>';}
+                                                      else if ($_GET['ordre'] == "nbr_produit_dispo_asc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nbr_produit_dispo_desc">Quantités de produits disponibles <i class="fa fa-arrow-up"></i></a>';}
+                                                      else if ($_GET['ordre'] == "nom_produit_asc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nbr_produit_dispo_asc">Quantités de produits disponibles</a>';}
+                                                      else if ($_GET['ordre'] == "nom_produit_desc") {echo'<a href="index.php?module=quantites-produits&action=index&ordre=nbr_produit_dispo_asc">Quantités de produits disponibles</a>';}?></th>
                     <th height="40" width="110">Ajoutés des quantités</th>
                   </tr>
 
                   <?php foreach ($afficher_quantites as $key => $row) {
                               echo'<tr>';
-                              echo"<td>".$row['lce_nom']."</td>";
+                              echo"<td>".$row['lp_nom']."</td>";
                               echo"<td>".$row['lp_quantites']." quantités de produits</td>";
                               echo'<td id="supp1"><a href="index.php?module=quantites-produits&action=ajouter_quantites&id_menu='.$row['lm_id'].'&id_carte='.$row['lce_id'].'">Ajoutés des quantités</a></td>';
                               echo"</tr>";
