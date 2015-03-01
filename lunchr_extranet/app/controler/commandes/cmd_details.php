@@ -7,6 +7,6 @@ include('../app/model/commandes/afficher_commande.php');
 		exit;
 	}
 
-$afficher_commande = afficher_commande($_SESSION['id_resto']);
-include('../app/view/commandes/index.php'); 
+$afficher_commande_details = afficher_commande_details($_SESSION['id_resto'], $_GET['id_commande']);
+include('../app/view/commandes/cmd_details.php'); 
 ?>

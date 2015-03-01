@@ -162,6 +162,27 @@ if(isset($_GET['update_user'])) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////         COMMANDE       ///////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// VALIDATION D'UNE COMMANDE
+if(isset($_GET['commande_valide'])) {
+    echo '<div class="alert alert-success" role="alert">La commande a bien été validée</div>';
+}
+
+// COMMANDE TERMINE
+if(isset($_GET['commande_termine'])) {
+    echo '<div class="alert alert-success" role="alert">La commande a bien été terminé</div>';
+}
+
+// COMMANDE ANNULE
+if(isset($_GET['commande_annule'])) {
+    echo '<div class="alert alert-danger" role="alert">La commande a bien été annulé</div>';
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ?>
 <!-- BARRE DE DEBUG -->
 <?php
@@ -403,6 +424,11 @@ if(isset($_SESSION['admin'])) {
 
                         <?php if(isset($_SESSION['resto_actif_valid'],$_SESSION['id_resto'])) {
                         echo '<li>';
+                            echo'<a '; if($_GET['module']=='changer_resto') { echo'<a class="active"'; } echo 'href="index.php?module=changer_resto&action=changer_resto"><i class="fa fa-cog"></i> Administrer un autre restaurant</a>';
+                        echo'</li>';}?>
+
+                        <?php if(isset($_SESSION['resto_actif_valid'],$_SESSION['id_resto'])) {
+                        echo '<li>';
                             echo'<a '; if($_GET['module']=='menu') { echo'<a class="active"'; } echo 'href="index.php?module=menu&action=index"><i class="fa fa-list"></i> Liste des cartes / menus</a>';
                         echo'</li>';}?>
 
@@ -449,11 +475,6 @@ if(isset($_SESSION['admin'])) {
                             echo'<a '; if($_GET['module']=='compte') { echo'<a class="active"'; } echo 'href="index.php?module=compte&action=index"><i class="fa fa-cog"></i> Compte</a>';
                         echo '</li>';}?>
 
-                        <?php if(isset($_SESSION['resto_actif_valid'],$_SESSION['id_resto'])) {
-                        echo '<li>';
-                            echo'<a '; if($_GET['module']=='changer_resto') { echo'<a class="active"'; } echo 'href="index.php?module=changer_resto&action=changer_resto"><i class="fa fa-cog"></i> Administrer un autre restaurant</a>';
-                        echo'</li>';}?>
-                       
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

@@ -7,6 +7,6 @@ include('../app/model/commandes/afficher_commande.php');
 		exit;
 	}
 
-$afficher_commande = afficher_commande($_SESSION['id_resto']);
-include('../app/view/commandes/index.php'); 
+$afficher_commande_annule = afficher_commande_annule($_SESSION['id_resto']);
+include('../app/view/commandes/cmd_annule.php'); 
 ?>

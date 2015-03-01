@@ -28,7 +28,10 @@ $(function() {
 })
 
 
-/***************  Fonction supprimer carte / menu / produit / restaurant / modifier et supprimer compte ***************/
+/***************  Fonction supprimer carte / menu / produit / restaurant /// 
+                  Modifier et supprimer compte ///
+                  Terminer commande / Annuler commande ///
+*************************************************************************/
 
 /*Fonction supprimer carte*/
 
@@ -73,6 +76,17 @@ function confirm_supprimer_compte() {
   return confirm('Etes-vous sûr de vouloir supprimer votre compte ? Cela supprimera aussi votre/vos restaurant(s)');
 }
 
+/*Fonction Terminer commande*/
+
+function confirm_termine_commande() {
+  return confirm('Etes-vous sûr de vouloir terminer cette commande ?');
+}
+
+/*Fonction Annuler commande*/
+
+function confirm_annuler_commande() {
+  return confirm('Etes-vous sûr de vouloir annuler cette commande ? Essayez de contacter le client via son numéro de téléphone, sinon cliquez sur "OK" pour valider l\'annulation');
+}
 
 /***************  Fonction agrandir images  ***************/
 

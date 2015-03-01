@@ -8,7 +8,7 @@
         </div>
 
         <div class="tableau_carte col-lg-12">
-            <table id="tableau" class="table table-bordered table-hover2">
+            <table id="tableau" class="table table-bordered table-hover">
 
                   <tr>
                     <th height="40" width="110">Nom du produit</th>
@@ -21,8 +21,8 @@
                     <th height="40" width="110">Détails commande</th>
                   </tr>
 
-                  	<?php	foreach ($afficher_commande as $key => $row) {
-                  			  $prix_total = $row['lp_prix'] * $row['lcl_quantite'];
+                  	<?php	foreach ($afficher_commande_demain as $key => $row) {
+                			    $prix_total = $row['lp_prix'] * $row['lcl_quantite'];
                           echo'<tr>';
                           echo"<td class='desc_produit'>".$row['lp_nom']."</td>";
                           echo"<td class='desc_produit'>".$row['lc_commentaire']."</td>";
@@ -30,14 +30,14 @@
                           echo"<td class='desc_prix_mp'>"; echo $prix_total; echo" €</td>";
                           echo"<td class='desc_prix_mp'>".$row['lc_type_paiment']."</td>";
                           echo"<td class='desc_heure'>"; echo date('H:i', strtotime($row['lc_date'])); echo"</td>";
-                          echo'<td><a href="index.php?module=commandes&action=gestion_etat_commande&id_commande='.$row['lc_id'].'&page=1">Valider</a></td>';
+                          echo'<td><a href="index.php?module=commandes&action=gestion_etat_commande&id_commande='.$row['lc_id'].'&page=2">Valider</a></td>';
                           echo'<td><a href="index.php?module=commandes&action=cmd_details&id_commande='.$row['lc_id'].'">Détails</a></td>';
                           echo"</tr>";
                         }
                     ?>          
             </table>
-      	</div>
-      		
+  		  </div>
+
 <?php include_once('../app/view/include/footer.inc.php'); ?>
      
              

@@ -497,3 +497,25 @@ th a {
 a.bouton_lien:hover {
     color: black;
 }
+
+/*********** Code couleur commandes ****************/
+
+.desc_produit {
+    background-color: #1D5CF6;
+    color: white;
+}
+
+.desc_prix_mp {
+    background-color: #F5F5F5;
+}
+
+.desc_heure {
+    background-color: rgba(255, 0, 0, 0.63);
+    color: black;
+}
+
+.desc_client {
+    background-color: rgba(241, 153, 16, 0.83);
+    color: black;
+}
+
