@@ -7,6 +7,10 @@ include('../app/model/commandes/afficher_commande.php');
 		exit;
 	}
 
-$afficher_commande_historique = afficher_commande_historique($_SESSION['id_resto']);
+	if (!isset($_GET['ordre_date'])) {
+	    $ordre = "lc.lc_date_dish ASC";
+	}
+
+$afficher_commande_historique = afficher_commande_historique($_SESSION['id_resto'], $ordre);
 include('../app/view/commandes/cmd_historique.php'); 
 ?>

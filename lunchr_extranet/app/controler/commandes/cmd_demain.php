@@ -7,6 +7,10 @@ include('../app/model/commandes/afficher_commande.php');
 		exit;
 	}
 
-$afficher_commande_demain = afficher_commande_demain($_SESSION['id_resto']);
+	if (!isset($_GET['ordre_heure'])) {
+	    $ordre = "lc.lc_heure_dish ASC";
+	}
+
+$afficher_commande_demain = afficher_commande_demain($_SESSION['id_resto'], $ordre);
 include('../app/view/commandes/cmd_demain.php'); 
 ?>

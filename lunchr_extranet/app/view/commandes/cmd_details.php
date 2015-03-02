@@ -41,14 +41,14 @@
 				<div class="form-group">
 				  <label class="col-md-2 control-label" for="textinput">Date commande</label>  
 				  <div class="col-md-4">
-				  	<span class="form-control input-md"><?php echo date('d/ m/ o', strtotime($afficher_commande_details[0]['lc_date']));?></span>
+				  	<span class="form-control input-md"><?php echo date('d/ m/ o', strtotime($afficher_commande_details[0]['lc_date_dish']));?></span>
 				  </div>
 				</div>
 
 				<div class="form-group">
 				  <label class="col-md-2 control-label" for="textinput">Heure commande</label>  
 				  <div class="col-md-4">
-				  	<span class="form-control input-md"><?php echo date('H:i', strtotime($afficher_commande_details[0]['lc_date']));?></span>
+				  	<span class="form-control input-md"><?php echo date('H:i', strtotime($afficher_commande_details[0]['lc_heure_dish']));?></span>
 				  </div>
 				</div>
 
@@ -78,8 +78,8 @@
 				  <div class="col-md-4">
 				  	<span class="form-control input-md">
 				  	<?php
-				  	$prix_total = $afficher_commande_details[0]['lp_prix'] * $afficher_commande_details[0]['lcl_quantite']; 
-				  	echo"Prix total : "; echo $prix_total; echo" €";?>
+				  	//$prix_total = $afficher_commande_details[0]['lp_prix'] * $afficher_commande_details[0]['lcl_quantite']; 
+				  	echo"Prix total : "; echo $afficher_commande_details[0]['lc_total']; echo" €";?>
 				  	</span>
 				  </div>
 				</div>
