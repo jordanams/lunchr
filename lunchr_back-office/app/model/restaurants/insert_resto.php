@@ -13,7 +13,7 @@ function insert_resto($nom_resto, $adresse_resto, $longitude, $latitude, $pays, 
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar1="http://ns366377.ovh.net/chekroun/perso/lunchr/dev/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
+		$avatar1="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file1'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 
@@ -56,7 +56,7 @@ function insert_resto($nom_resto, $adresse_resto, $longitude, $latitude, $pays, 
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar2="http://ns366377.ovh.net/chekroun/perso/lunchr/dev/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
+		$avatar2="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file2'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 
@@ -99,7 +99,7 @@ function insert_resto($nom_resto, $adresse_resto, $longitude, $latitude, $pays, 
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar3="http://ns366377.ovh.net/chekroun/perso/lunchr/dev/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
+		$avatar3="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file3'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 
@@ -142,7 +142,7 @@ function insert_resto($nom_resto, $adresse_resto, $longitude, $latitude, $pays, 
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar4="http://ns366377.ovh.net/chekroun/perso/lunchr/dev/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
+		$avatar4="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_back-office/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file4'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 

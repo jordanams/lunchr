@@ -498,24 +498,44 @@ a.bouton_lien:hover {
     color: black;
 }
 
-/*********** Code couleur commandes ****************/
+/*********** commandes ****************/
 
-.desc_produit {
-    background-color: #1D5CF6;
-    color: white;
+.liste_commande li {
+    list-style-type: none;
 }
 
-.desc_prix_mp {
-    background-color: #F5F5F5;
+.liste_commantaire li {
+    list-style-type: none;
 }
 
-.desc_heure {
-    background-color: rgba(255, 0, 0, 0.63);
+.liste_commande li:before {
+    content: "→ "; /* caractère UTF-8 */
+}
+
+.bordure_commande {
+    border-top : 1px #333 solid;
+    border-bottom : 1px #333 solid;
+    background-color: #F2F1F1;
+}
+
+.bordure_commande_valide {
+    border-top : 1px #333 solid;
+    border-bottom : 1px #333 solid;
+    background-color: rgba(127, 228, 132, 0.25);
+}
+
+.bordure_commande_historique {
+    border-top : 1px #333 solid;
+    border-bottom : 1px #333 solid;
+    background-color: rgba(249, 179, 72, 0.55);
+}
+
+.bordure_commande_annule {
+    border-top : 1px #333 solid;
+    border-bottom : 1px #333 solid;
+    background-color: rgba(249, 72, 72, 0.78);
+}
+
+.breadcrumb li a {
     color: black;
 }
-
-.desc_client {
-    background-color: rgba(241, 153, 16, 0.83);
-    color: black;
-}
-

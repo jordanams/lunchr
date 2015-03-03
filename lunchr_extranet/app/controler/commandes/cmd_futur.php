@@ -12,5 +12,12 @@ include('../app/model/commandes/afficher_commande.php');
 	}
 
 $afficher_commande_futur = afficher_commande_futur($_SESSION['id_resto'], $ordre);
+	$y=0;
+	foreach ($afficher_commande_futur as $key => $row) {
+		$produit[$y] = afficher_produits_commande($row['lc_id']);
+		$count = count($produit[$y]);
+		$y++;
+	}
+
 include('../app/view/commandes/cmd_futur.php'); 
 ?>

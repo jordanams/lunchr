@@ -7,41 +7,38 @@
           		<br/>
         </div>
 
-        <div class="tableau_carte col-lg-12">
-            <table id="tableau" class="table table-bordered table-hover2">
+        <?php foreach ($afficher_commande_annule as $key => $row){ ?>
+            <div class="tableau_carte bordure_commande_annule col-lg-12">
 
-                  <tr>
-                    <th height="40" width="110"><?php if (!isset($_GET['ordre_commande'])) {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_commande=commande_asc">Numéro de commande</a>';}
-                                                      else if ($_GET['ordre_commande'] == "commande_asc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_commande=commande_desc">Numéro de commande <i class="fa fa-arrow-up"></i></a>';}
-                                                      else if ($_GET['ordre_commande'] == "commande_desc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_commande=commande_asc">Numéro de commande <i class="fa fa-arrow-down"></i></a>';}
-                                                ?></th>
-                    <th height="40" width="110"><?php if (!isset($_GET['ordre_prix'])) {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_prix=prix_asc">Prix total</a>';}
-                                                      else if ($_GET['ordre_prix'] == "prix_asc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_prix=prix_desc">Prix total <i class="fa fa-arrow-up"></i></a>';}
-                                                      else if ($_GET['ordre_prix'] == "prix_desc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_prix=prix_asc">Prix total <i class="fa fa-arrow-down"></i></a>';}
-                                                ?></th>
-                    <th height="40" width="110"><?php if (!isset($_GET['ordre_date'])) {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_date=date_asc">Date </a>';}
-                                                      else if ($_GET['ordre_date'] == "date_asc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_date=date_desc">Date <i class="fa fa-arrow-up"></i></a>';}
-                                                      else if ($_GET['ordre_date'] == "date_desc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_date=date_asc">Date <i class="fa fa-arrow-down"></i></a>';}
-                                                ?></th>
-                    <th height="40" width="110"><?php if (!isset($_GET['ordre_nom'])) {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_nom=nom_asc">Nom client</a>';}
-                                                      else if ($_GET['ordre_nom'] == "nom_asc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_nom=nom_desc">Nom client <i class="fa fa-arrow-up"></i></a>';}
-                                                      else if ($_GET['ordre_nom'] == "nom_desc") {echo'<a href="index.php?module=commandes&action=gestion_ordre&ordre_annule&ordre_nom=nom_asc">Nom client <i class="fa fa-arrow-down"></i></a>';}
-                                                ?></th>
-                    <th height="40" width="110">Détails commande</th>
-                  </tr>
+                  <h3>N° de commande <?php echo $row['lc_id']; ?></h3>
+                  <br/>
+                  <h5>Liste des produits de la commande :</h5>
+                  <ul class="liste_commande">
+                    <?php foreach ($produit[$key] as $key => $row) { ?>
+                      <li><?php echo $row['lp_nom']; ?> (x<?php echo $row['lcl_quantite']; ?>)</li>
+                    <?php } ?>
+                  </ul>
 
-                  	<?php	foreach ($afficher_commande_annule as $key => $row) {
-                  			  //$prix_total = $row['lp_prix'] * $row['lcl_quantite'];
-                          echo'<tr>';
-                          echo"<td class='desc_produit'> Lunchr N° ".$row['lc_id']."</td>";
-                          echo"<td class='desc_prix_mp'>".$row['lc_total']." €</td>";
-                          echo"<td class='desc_heure'><b>"; echo date('d/ m/ o', strtotime($row['lc_date_dish'])); echo"</b></td>";
-                          echo"<td class='desc_client'>".$row['lu_nom']."</td>";
-                          echo'<td><a href="index.php?module=commandes&action=cmd_details&id_commande='.$row['lc_id'].'">Détails</a></td>';
-                          echo"</tr>";
-                        }
-                    ?>          
-            </table>
-      	</div>
+                  <table>
+                      <tr>
+                        <th height="40" width="160">Date d'arrivée</th>
+                        <th height="40" width="160">Total commande</th>
+                        <th height="40" width="160">Détails commande</th>
+                      </tr>
+
+                      <tr>
+                        <td><?php echo date('d/ m/ y', strtotime($row['lc_date_dish'])); ?></td>
+                        <td><?php echo $row['lc_total']; echo" €";?></td>
+                        <td><?php echo'<a href="index.php?module=commandes&action=cmd_details&id_commande='.$row['lc_id'].'">Détails</a>'; ?></td></td>
+                      </tr>
+                  </table>
+                  <br/>
+            </div>
+            <br/>
+            <br/>
+
+            <?php
+            }
+            ?>
       		
 <?php include_once('../app/view/include/footer.inc.php'); ?>

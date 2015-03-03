@@ -5,7 +5,7 @@ function afficher_resto() {
 		try {
   			$select = $connexion -> prepare("SELECT *
   												FROM lunchr_restaurants
-  												WHERE lr_actif_valid = 1");
+  												WHERE lr_actif_valid = 2");
 			$select -> execute();
 			$select -> setFetchMode(PDO::FETCH_ASSOC);
 			$resultat = $select -> fetchAll();

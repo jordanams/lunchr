@@ -7,15 +7,6 @@ include('../app/model/commandes/afficher_commande.php');
 		exit;
 	}
 
-	if (isset($_GET['ordre_produit'])) {
-		if ($_GET['ordre_produit'] == 'nom_produit_asc') {
-		    $ordre = "lp.lp_nom ASC";
-		}
-		elseif ($_GET['ordre_produit'] == 'nom_produit_desc') {
-		    $ordre = "lp.lp_nom DESC";
-		}
-	}
-
 	if (isset($_GET['ordre_heure'])) {
 		if ($_GET['ordre_heure'] == 'heure_asc') {
 		    $ordre = "lc.lc_heure_dish ASC";
@@ -61,19 +52,42 @@ include('../app/model/commandes/afficher_commande.php');
 		}
 	}
 
+	if (isset($_GET['ordre_nb_personne'])) {
+		if ($_GET['ordre_nb_personne'] == 'nb_personne_asc') {
+		    $ordre = "lc.lc_nombre_personnes ASC";
+		}
+		elseif ($_GET['ordre_nb_personne'] == 'nb_personne_desc') {
+		    $ordre = "lc.lc_nombre_personnes DESC";
+		}
+	}
+
 
 $afficher_commande = afficher_commande($_SESSION['id_resto'], $ordre);
-$afficher_commande_demain = afficher_commande_demain($_SESSION['id_resto'], $ordre);
+$y=0;
+	foreach ($afficher_commande as $key => $row) {
+		$produit[$y] = afficher_produits_commande($row['lc_id']);
+		$count = count($produit[$y]);
+		$y++;
+	}
+
 $afficher_commande_futur = afficher_commande_futur($_SESSION['id_resto'], $ordre);
+$y=0;
+	foreach ($afficher_commande_futur as $key => $row) {
+		$produit[$y] = afficher_produits_commande($row['lc_id']);
+		$count = count($produit[$y]);
+		$y++;
+	}
+
 $afficher_commande_valide = afficher_commande_valide($_SESSION['id_resto'], $ordre);
-$afficher_commande_historique = afficher_commande_historique($_SESSION['id_resto'], $ordre);
-$afficher_commande_annule = afficher_commande_annule($_SESSION['id_resto'], $ordre);
+$y=0;
+	foreach ($afficher_commande_valide as $key => $row) {
+		$produit[$y] = afficher_produits_commande($row['lc_id']);
+		$count = count($produit[$y]);
+		$y++;
+	}
 
 if (isset($_GET['ordre_index'])) {
 	include('../app/view/commandes/index.php');
-}
-if (isset($_GET['ordre_demain'])) {
-	include('../app/view/commandes/cmd_demain.php');
 }
 if (isset($_GET['ordre_futur'])) {
 	include('../app/view/commandes/cmd_futur.php');
@@ -81,10 +95,5 @@ if (isset($_GET['ordre_futur'])) {
 if (isset($_GET['ordre_valider'])) {
 	include('../app/view/commandes/cmd_valider.php');
 }
-if (isset($_GET['ordre_historique'])) {
-	include('../app/view/commandes/cmd_historique.php');
-}
-if (isset($_GET['ordre_annule'])) {
-	include('../app/view/commandes/cmd_annule.php');
-}
+
 ?>

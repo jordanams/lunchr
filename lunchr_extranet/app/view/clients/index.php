@@ -4,7 +4,7 @@
         	<h1> Liste des clients </h1>
         	<br/>
           		<ul class="nav nav-tabs nav-justified" role="tablist">
-			        <li role="presentation"<?php if($_GET['action']=='index') { echo' class="active"'; } ?>><a href="index.php?module=commandes&action=index">Liste des clients</a></li>
+			        <li role="presentation"<?php if($_GET['action']=='index') { echo' class="active"'; } ?>><a href="index.php?module=clients&action=index">Liste des clients</a></li>
 				</ul>
 			<br/>
         </div>
@@ -27,7 +27,7 @@
                             echo"<td>".$row['lu_tel']."</td>";
                             echo"<td>".$row['lu_mail']."</td>";
                             echo"<td></td>";
-                            echo'<td><a href="index.php?module=commandes&action=cmd_details&id_commande='.$row['lc_id'].'">Détails</a></td>';
+                            echo'<td><a href="index.php?module=commandes&action=cmd_details&id_commande=">Détails</a></td>';
                             echo"</tr>";
                         }
                     ?>          

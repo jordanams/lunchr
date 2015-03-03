@@ -19,7 +19,7 @@ if(isset($_GET['go']) || isset($_GET['id_carte'])) {
      
     // connexion à la base de données
     try {
-        $bdd = new PDO('mysql:host=ns366377.ovh.net;dbname=chekroun', 'chekroun', '162162');
+        $bdd = new PDO('mysql:host=ns366377.ovh.net;dbname=amsalem', 'amsalem', '827537');
     } catch(Exception $e) {
         exit('Impossible de se connecter à la base de données.');
     }

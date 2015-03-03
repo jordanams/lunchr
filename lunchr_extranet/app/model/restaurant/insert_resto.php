@@ -12,7 +12,7 @@ function insert_resto($desc_resto, $avatar1, $avatar2, $avatar3, $avatar4, $id_r
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar1="localhost:8888/LunchR/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
+		$avatar1="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file1'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 
@@ -55,7 +55,7 @@ function insert_resto($desc_resto, $avatar1, $avatar2, $avatar3, $avatar4, $id_r
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar2="localhost:8888/LunchR/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
+		$avatar2="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file2'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 
@@ -98,7 +98,7 @@ function insert_resto($desc_resto, $avatar1, $avatar2, $avatar3, $avatar4, $id_r
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar3="localhost:8888/LunchR/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
+		$avatar3="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file3'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 
@@ -141,7 +141,7 @@ function insert_resto($desc_resto, $avatar1, $avatar2, $avatar3, $avatar4, $id_r
 	else {
 
 		$url = md5(uniqid(rand(), true));
-		$avatar4="localhost:8888/LunchR/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
+		$avatar4="http://ns366377.ovh.net/amsalem/perso/lunchr/prod/lunchr_extranet/public/images/img_restaurants/".$url.".jpg";
 
 		if (move_uploaded_file($_FILES['ch_file4'] ['tmp_name'],"images/img_restaurants/".$url.".jpg"))
 

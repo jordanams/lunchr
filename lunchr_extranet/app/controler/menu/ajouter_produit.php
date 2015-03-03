@@ -16,7 +16,8 @@ include('../app/model/menu/ajouter_produit.php');
 			$insert = ajouter_produit(	$_SESSION['id_resto'],
 										$_POST['id_menu'], 
 										$_POST['nom_produit'],
-										$_POST['prix_produit'], 
+										$_POST['prix_produit'],
+										$_POST['nbr_produit'], 
 										$_POST['desc_produit'], 
 										$_FILES['ch_file1']);
 			if($insert = true) {

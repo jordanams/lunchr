@@ -7,6 +7,15 @@ include('../app/model/menu/select_resto.php');
 		exit;
 	}
 
+	if(isset($_POST['nom_resto_select_valide'])) {
+
+		$insert = $_SESSION['id_resto'] = $_POST['nom_resto_select_valide'];
+
+		if($insert = true) {
+			header('Location:index.php?module=menu&action=index');
+		}
+	}
+
 	if(isset($_POST['nom_resto_select'])) {
 
 		$insert = $_SESSION['id_resto'] = $_POST['nom_resto_select'];
@@ -16,6 +25,7 @@ include('../app/model/menu/select_resto.php');
 		}
 	}
 
+$select_resto_valide = select_resto_valide($_SESSION['user_id']);
 $select_resto = select_resto($_SESSION['user_id']);
 include('../app/view/changer_resto/changer_resto.php'); 
 ?>

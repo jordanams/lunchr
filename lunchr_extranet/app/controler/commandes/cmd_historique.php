@@ -11,6 +11,13 @@ include('../app/model/commandes/afficher_commande.php');
 	    $ordre = "lc.lc_date_dish ASC";
 	}
 
-$afficher_commande_historique = afficher_commande_historique($_SESSION['id_resto'], $ordre);
+$afficher_commande_historique = afficher_commande_historique($_SESSION['id_resto']);
+	$y=0;
+	foreach ($afficher_commande_historique as $key => $row) {
+		$produit[$y] = afficher_produits_commande($row['lc_id']);
+		$count = count($produit[$y]);
+		$y++;
+	}
+
 include('../app/view/commandes/cmd_historique.php'); 
 ?>

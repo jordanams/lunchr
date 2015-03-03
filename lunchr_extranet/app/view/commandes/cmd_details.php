@@ -62,14 +62,14 @@
 				<div class="form-group">
 				  <label class="col-md-2 control-label" for="textinput">Produit</label>  
 				  <div class="col-md-4">
-				  	<span class="form-control input-md"><?php foreach ($afficher_commande_details as $key => $row) { echo"".$row['lp_nom']." "; } ?></span>
+				  	<textarea class="form-control" rows="6"><?php foreach ($afficher_commande_details as $key => $row) { echo"".$row['lp_nom'].", "; } ?></textarea>
 				  </div>
 				</div>
 
 				<div class="form-group">
 				  <label class="col-md-2 control-label" for="textinput">Quantitées de produit</label>  
 				  <div class="col-md-4">
-				  	<textarea class="form-control" rows="6"><?php foreach ($afficher_commande_details as $key => $row) { echo"x "; echo"".$row['lcl_quantite']." "; echo"".$row['lp_nom']." "; } ?></textarea>
+				  	<textarea class="form-control" rows="6"><?php foreach ($afficher_commande_details as $key => $row) { echo"x "; echo"".$row['lcl_quantite']." "; echo"".$row['lp_nom']."/ "; } ?></textarea>
 				  </div>
 				</div>
 

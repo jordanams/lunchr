@@ -296,87 +296,11 @@ if(isset($_SESSION['admin'])) {
 
             <ul class="nav navbar-top-links navbar-right">
                 <a><?php echo $_SESSION['login']; ?></a>
-                <?php   if(isset($_SESSION['resto_actif_valid'])) {
-                    echo '<li id="testtool" data-toggle="tooltip" title="Nouveaux restaurants" data-placement="top"  class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-bell fa-fw"></i> <span id="count_notif"></span> <i class="fa fa-caret-down"></i>';
-                    }?>
-                        
-                    </a>
+                <li id="testtool" data-toggle="tooltip" title="Nouveaux restaurants" data-placement="top"  class="dropdown">
                     
                     
                     
-                                 <!-- /.AJAX COUNT NOTIFS -->
-                <script type="text/javascript">
-                var i = 0;
-                function init(){
-                    loop();
-                }
-                function loop(){
-					function traiterFlux(flux) {
-							contenu = "";
-							$.each(flux, function(key,value) {
-								if(value > 0) {
-								contenu += "<b class='red'>"+value+"</b>";
-								}
-								else
-								{
-								contenu += "<b>"+value+"</b>";	
-								}
-								});
-								$(count_notif).html(contenu);	
-								}
-								
-					function traiterFlux2(flux) {
-							contenu = "";
-							$.each(flux, function(index,entry) {                       
-                        contenu += "<li><a href='index.php?module=restaurants&action=details_resto&id="+entry.lr_id+"'><i class='fa fa-cutlery'> Nouveau restaurant : <div><b>"+entry.lr_nom+"</b></div></i></a></li><li class='divider'></li>";
-								});
-								$(new_resto).html(contenu);	
-								}
 
-					$(document).ready(function() {
-					$.ajax({
-							url:'../app/controler/accueil/ajaxController.php',
-							type:'post',
-							data:$(this).serialize(),
-							dataType:'json',
-							success: function(data) {
-									console.log(data);
-									traiterFlux(data.count_notif);
-									traiterFlux2(data.liste_restaurant.restaurant);
-
-													},
-							error: function(jqXHR, textStatus, errorThrown) {
-								console.log("erreur execution requete ajax!");
-								
-							}
-						
-						});
-						});
-                }
-                setInterval('loop();',1000);
-                init();
-
-				$(testtool).click(function() {
-								$.ajax({
-					          url: '../app/controler/accueil/ajaxUpdateNotif.php?type=2',
-					          method: 'POST',
-					          data: {},
-					          success: function() {
-					          },
-					          error: function(jqXHR, textStatus, errorThrown) {
-								console.log("erreur execution requete ajax!");
-								}
-					        });
-					        });
-					</script>
-                    
-                    
-                    
-                    <ul id="new_resto" class="dropdown-menu dropdown-alerts">
-                     
-                    </ul>
                     <!-- /.dropdown-alerts -->
                 </li>
 
@@ -388,8 +312,7 @@ if(isset($_SESSION['admin'])) {
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['login']; ?></a>
                         </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
+                        
                         <li class="divider"></li>
                         <li><a href="index.php?module=accueil&action=index&logout=1"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
@@ -463,17 +386,18 @@ if(isset($_SESSION['admin'])) {
                             echo '</li>';}
                         }?>
 
-                        <?php if(($_SESSION['resto_actif_attente']) == 1) {
-                        echo '<li>';
-                            echo'<a '; if($_GET['module']=='restaurant') { echo' class="active"'; } echo 'href="index.php?module=restaurant&action=attente_actif"><i class="fa fa-cog"></i> Restaurant</a>';
-                        echo '</li>';}?>
-
                         <!---_______________________________________________-->
 
                         <?php if(isset($_SESSION['resto_actif_valid'])) {
                         echo '<li>';
                             echo'<a '; if($_GET['module']=='compte') { echo'<a class="active"'; } echo 'href="index.php?module=compte&action=index"><i class="fa fa-cog"></i> Compte</a>';
                         echo '</li>';}?>
+
+                        <?php  
+                        echo '<li>';
+                            echo'<a '; if($_GET['module']=='nous-contacter') { echo' class="active"'; } echo 'href="index.php?module=nous-contacter&action=index"><i class="fa fa-home"></i> Nous contacter</a>';
+                        echo '</li>';
+                        ?>
 
                     </ul>
                 </div>
